@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import argparse
 import json
 import re
 from pathlib import Path
-import argparse
+
 import pandas as pd
 
 DAY_ORDER = [
@@ -36,7 +37,7 @@ def tmin(x) -> int | None:
     return int(m.group(1)) * 60 + int(m.group(2))
 
 
-def has_prefix(stops: list[str], prefixes: list[str]) -> bool:
+def has_any_stop(stops: list[str], prefixes: list[str]) -> bool:
     for st in stops:
         up = str(st).upper()
         for p in prefixes:
@@ -45,150 +46,65 @@ def has_prefix(stops: list[str], prefixes: list[str]) -> bool:
     return False
 
 
+def idx_first(stops: list[str], prefixes: list[str]) -> int | None:
+    for i, s in enumerate(stops):
+        up = str(s).upper()
+        for p in prefixes:
+            if up.startswith(p):
+                return i
+    return None
+
+
+def idx_last(stops: list[str], prefixes: list[str]) -> int | None:
+    for i in range(len(stops) - 1, -1, -1):
+        up = str(stops[i]).upper()
+        for p in prefixes:
+            if up.startswith(p):
+                return i
+    return None
+
+
 def day_bucket(raw_day: str) -> str:
-    s = str(raw_day).lower()
-    if "dilluns" in s or "feiner" in s:
+    # Aquí ja et ve normalitzat al CSV, però ho deixem robust
+    s = str(raw_day).strip()
+    for d in DAY_ORDER:
+        if s.lower() == d.lower():
+            return d
+    low = s.lower()
+    if "dilluns" in low or "feiner" in low:
         return DAY_ORDER[0]
-    if "dissabte" in s or "festiu" in s:
+    if "dissabte" in low or "festiu" in low:
         return DAY_ORDER[1]
-    if "diumenge" in s:
+    if "diumenge" in low:
         return DAY_ORDER[2]
-    return str(raw_day).strip()
+    return s
 
 
 def classify_bus_type(stops: list[str], raw_type: str | None) -> str:
     """
-    Regles (corregides perquè NO deixi semidirecte buit):
-    - Si Tipus_bus és 'e22' o 'e23' -> fem servir això (amb el fix de sota).
-    - Si Tipus_bus és buit/NaN/altres -> 'semidirecte'.
-
-    Fix (Punt 2):
-    - Si Tipus_bus == 'e23' però passa per MANRESA i NO passa per OLESA/MONISTROL -> 'e22'
+    - Respecta Tipus_bus si és e22/e23
+    - Altrament -> semidirecte
+    Fix Punt 2:
+    - e23 + passa per Manresa però NO passa per Olesa/Monistrol -> e22
     """
     raw = (raw_type or "").strip().lower()
     bt = raw if raw in ("e22", "e23") else "semidirecte"
 
     if bt == "e23":
-        has_olesa = has_prefix(stops, ["OLESA"])
-        has_mon = has_prefix(stops, ["MONISTROL"])
-        has_man = has_prefix(stops, ["MANRESA"])
-        if has_man and not (has_olesa or has_mon):
+        has_om = has_any_stop(stops, ["OLESA", "MONISTROL"])
+        has_man = has_any_stop(stops, ["MANRESA"])
+        if has_man and not has_om:
             bt = "e22"
 
     return bt
 
 
-def guess_section(first_stop: str, stops: list[str]) -> str | None:
-    first = str(first_stop).upper()
-    has_bcn = has_prefix(stops, ["BCN"])
-    has_man = has_prefix(stops, ["MANRESA"])
-    has_om = has_prefix(stops, ["OLESA", "MONISTROL"])
-
-    if first.startswith("MANRESA") and has_bcn:
-        return "m2b"
-    if first.startswith("BCN") and has_man:
-        return "b2m"
-    if (first.startswith("OLESA") or first.startswith("MONISTROL")) and has_bcn:
-        return "o2b"
-    if first.startswith("BCN") and has_om:
-        return "b2o"
-    return None
-
-
-def build_data(df: pd.DataFrame) -> dict:
-    required_cols = {
-        "Tipus_dia",
-        "Direccio",
-        "Tipus_bus",
-        "Id_viatge_dia",
-        "Parada_sortida",
-        "Hora_sortida",
-        "Parada_arribada",
-        "Hora_arribada",
-    }
-    missing = required_cols - set(df.columns)
-    if missing:
-        raise SystemExit(f"ERROR: Falta(n) columna(es): {sorted(missing)}")
-
-    group_cols = ["Tipus_dia", "Direccio", "Tipus_bus", "Id_viatge_dia"]
-    raw_trips = []
-
-    for (day, _direction, bus_raw, trip_id), g in df.groupby(group_cols, dropna=False):
-        stops = {}
-
-        for _, r in g.iterrows():
-            ps, ts = r.get("Parada_sortida"), r.get("Hora_sortida")
-            if pd.notna(ps) and pd.notna(ts) and str(ts).strip() != "-":
-                stops[str(ps)] = norm_time(ts)
-
-            pa, ta = r.get("Parada_arribada"), r.get("Hora_arribada")
-            if pd.notna(pa) and pd.notna(ta) and str(ta).strip() != "-":
-                pa = str(pa)
-                stops.setdefault(pa, norm_time(ta))
-
-        items = [(s, t) for s, t in stops.items() if tmin(norm_time(t)) is not None]
-        if not items:
-            continue
-
-        items.sort(key=lambda x: tmin(norm_time(x[1])) or 10**9)
-        stop_list = [{"stop": s, "time": norm_time(t)} for s, t in items]
-
-        all_stops = [x["stop"] for x in stop_list]
-        first_stop = stop_list[0]["stop"]
-
-        raw_type = None if pd.isna(bus_raw) else str(bus_raw)
-        bt = classify_bus_type(all_stops, raw_type)
-
-        sec = guess_section(first_stop, all_stops)
-        if not sec:
-            continue
-
-        trip_id_out = int(trip_id) if str(trip_id).isdigit() else str(trip_id)
-
-        raw_trips.append(
-            {
-                "section": sec,
-                "day": str(day),
-                "busType": bt,
-                "trip_id": trip_id_out,
-                "start_time": stop_list[0]["time"],
-                "end_time": stop_list[-1]["time"],
-                "stops": stop_list,
-            }
-        )
-
-    sections = {
-        sid: {d: {"e22": [], "e23": [], "semidirecte": []} for d in DAY_ORDER}
-        for sid, _, _ in SECTIONS
-    }
-
-    for tr in raw_trips:
-        d = day_bucket(tr["day"])
-        if d not in sections[tr["section"]]:
-            sections[tr["section"]][d] = {"e22": [], "e23": [], "semidirecte": []}
-        sections[tr["section"]][d][tr["busType"]].append(tr)
-
-    for sid in sections:
-        for d in sections[sid]:
-            for bt in sections[sid][d]:
-                sections[sid][d][bt].sort(
-                    key=lambda x: (tmin(x["start_time"]) or 10**9, str(x["trip_id"]))
-                )
-
+def slice_trip(stops_times: list[dict], start_i: int, end_i: int) -> dict:
+    sub = stops_times[start_i : end_i + 1]
     return {
-        "sections": [
-            {
-                "id": sid,
-                "title": title,
-                "busTypeOrder": order,
-                "days": [
-                    {"name": d, "buses": sections[sid][d]}
-                    for d in DAY_ORDER
-                    if d in sections[sid]
-                ],
-            }
-            for sid, title, order in SECTIONS
-        ]
+        "start_time": sub[0]["time"],
+        "end_time": sub[-1]["time"],
+        "stops": sub,
     }
 
 
@@ -205,7 +121,113 @@ def main():
         raise SystemExit(f"ERROR: No existeix {csv_in.resolve()}")
 
     df = pd.read_csv(csv_in)
-    out_data = build_data(df)
+
+    required = [
+        "Tipus_bus",
+        "Tipus_dia",
+        "Direccio",
+        "Parada_sortida",
+        "Hora_sortida",
+        "Parada_arribada",
+        "Hora_arribada",
+        "Id_viatge_dia",
+    ]
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        raise SystemExit(f"ERROR: Falta(n) columna(es): {missing}")
+
+    group_cols = ["Tipus_dia", "Direccio", "Tipus_bus", "Id_viatge_dia"]
+
+    # Contenidors finals
+    containers = {
+        sid: {d: {"e22": [], "e23": [], "semidirecte": []} for d in DAY_ORDER}
+        for sid, _, _ in SECTIONS
+    }
+
+    def add(sec_id: str, day: str, bt: str, trip_id_out, sub: dict):
+        containers[sec_id][day][bt].append(
+            {
+                "trip_id": trip_id_out,
+                "start_time": sub["start_time"],
+                "end_time": sub["end_time"],
+                "stops": sub["stops"],
+            }
+        )
+
+    # 1) Construïm viatges ordenats per hora
+    for (day_raw, direction, bus_raw, trip_id), g in df.groupby(group_cols, dropna=False):
+        day = day_bucket(str(day_raw))
+        if day not in containers["m2b"]:
+            continue
+
+        # map parada->hora (prou per aquesta matriu)
+        stops = {}
+        for _, r in g.iterrows():
+            ps, ts = r["Parada_sortida"], r["Hora_sortida"]
+            if pd.notna(ps) and pd.notna(ts) and str(ts).strip() != "-":
+                stops[str(ps)] = norm_time(ts)
+
+            pa, ta = r["Parada_arribada"], r["Hora_arribada"]
+            if pd.notna(pa) and pd.notna(ta) and str(ta).strip() != "-":
+                stops.setdefault(str(pa), norm_time(ta))
+
+        items = [(s, t) for s, t in stops.items() if tmin(norm_time(t)) is not None]
+        if not items:
+            continue
+
+        items.sort(key=lambda x: tmin(norm_time(x[1])) or 10**9)
+        stop_list = [{"stop": s, "time": norm_time(t)} for s, t in items]
+        stop_names = [x["stop"] for x in stop_list]
+
+        raw_type = None if pd.isna(bus_raw) else str(bus_raw)
+        bt = classify_bus_type(stop_names, raw_type)
+
+        trip_id_out = int(trip_id) if str(trip_id).isdigit() else str(trip_id)
+
+        # 2) Assignació a seccions + duplicació (retallant)
+        if direction == "Manresa - Barcelona":
+            # Manresa → Barcelona (complet)
+            bt_m2b = bt if bt in ("e22", "semidirecte") else "semidirecte"
+            add("m2b", day, bt_m2b, trip_id_out, slice_trip(stop_list, 0, len(stop_list) - 1))
+
+            # Olesa/Monistrol → Barcelona (retall) si el recorregut ho permet
+            if has_any_stop(stop_names, ["OLESA", "MONISTROL"]) and has_any_stop(stop_names, ["BCN"]):
+                si = idx_first(stop_names, ["OLESA", "MONISTROL"])
+                ei = idx_last(stop_names, ["BCN"])
+                if si is not None and ei is not None and si < ei:
+                    bt_o2b = bt if bt in ("e23", "semidirecte") else "semidirecte"
+                    add("o2b", day, bt_o2b, trip_id_out, slice_trip(stop_list, si, ei))
+
+        elif direction == "Barcelona - Manresa":
+            # Barcelona → Manresa (complet)
+            bt_b2m = bt if bt in ("e22", "semidirecte") else "semidirecte"
+            add("b2m", day, bt_b2m, trip_id_out, slice_trip(stop_list, 0, len(stop_list) - 1))
+
+            # Barcelona → Olesa/Monistrol (retall) si el recorregut ho permet
+            if has_any_stop(stop_names, ["BCN"]) and has_any_stop(stop_names, ["OLESA", "MONISTROL"]):
+                si = idx_first(stop_names, ["BCN"])
+                ei = idx_last(stop_names, ["OLESA", "MONISTROL"])
+                if si is not None and ei is not None and si < ei:
+                    bt_b2o = bt if bt in ("e23", "semidirecte") else "semidirecte"
+                    add("b2o", day, bt_b2o, trip_id_out, slice_trip(stop_list, si, ei))
+
+    # 3) Ordenar per hora de sortida
+    for sid in containers:
+        for d in containers[sid]:
+            for bt in containers[sid][d]:
+                containers[sid][d][bt].sort(key=lambda x: (tmin(x["start_time"]) or 10**9, str(x["trip_id"])))
+
+    out_data = {
+        "sections": [
+            {
+                "id": sid,
+                "title": title,
+                "busTypeOrder": order,
+                "days": [{"name": d, "buses": containers[sid][d]} for d in DAY_ORDER],
+            }
+            for sid, title, order in SECTIONS
+        ]
+    }
 
     out.write_text(json.dumps(out_data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"OK -> {out.resolve()}")
