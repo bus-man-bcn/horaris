@@ -4,47 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Horaris bus Manresa ↔ Barcelona (accessible)</title>
-  <meta name="description" content="Horaris en format accessible per a lectors de pantalla (TalkBack i VoiceOver)." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Horaris en format accessible per TalkBack i VoiceOver." />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contingut</a>
 
   <header class="site-header" role="banner">
     <h1>Horaris bus Manresa ↔ Barcelona</h1>
+
     <p class="lede">
-      Format pensat per ser llegit bé amb <strong>TalkBack</strong> (Android) i <strong>VoiceOver</strong> (iPhone).
-      Els horaris són orientatius i poden variar (trànsit, climatologia).
+      Format pensat per ser llegit bé amb TalkBack (Android) i VoiceOver (iPhone).
+    </p>
+
+    <p class="howto" id="howto">
+      Organització: hi ha 2 línies. Cada línia té 2 direccions.
+      Dins de cada direcció hi ha 3 tipus de dia.
+      A cada secció trobaràs 2 pestanyes: Directes (E 22 o E 23) i Semidirectes.
     </p>
   </header>
 
-  <nav class="site-nav" aria-label="Navegació principal">
-    <ul>
-      <li><a href="#anada">Manresa → Barcelona</a></li>
-      <li><a href="#tornada">Barcelona → Manresa</a></li>
-      <li><a href="#notes">Notes</a></li>
-    </ul>
-  </nav>
-
   <main id="main" class="content" role="main" tabindex="-1">
-    <section id="anada" aria-labelledby="h-anada">
-      <h2 id="h-anada">Manresa → Barcelona</h2>
-      <div class="loading" id="loading-anada" aria-live="polite">Carregant horaris…</div>
-      <div id="anada-content"></div>
+    <section aria-labelledby="h-selector">
+      <h2 id="h-selector">Selecciona direcció i tipus de dia</h2>
+
+      <h3 class="picker-title">Línia: Manresa - Barcelona</h3>
+      <div id="picker-mb" class="picker" role="group" aria-label="Selector línia Manresa - Barcelona"></div>
+
+      <h3 class="picker-title">Línia: Manresa - Olesa/Monistrol</h3>
+      <div id="picker-mo" class="picker" role="group" aria-label="Selector línia Manresa - Olesa o Monistrol"></div>
     </section>
 
-    <section id="tornada" aria-labelledby="h-tornada">
-      <h2 id="h-tornada">Barcelona → Manresa</h2>
-      <div class="loading" id="loading-tornada" aria-live="polite">Carregant horaris…</div>
-      <div id="tornada-content"></div>
+    <section aria-labelledby="h-result">
+      <h2 id="h-result">Horaris</h2>
+      <div class="loading" id="loading" aria-live="polite">Carregant horaris…</div>
+      <div id="panels"></div>
     </section>
 
     <section id="notes" aria-labelledby="h-notes">
       <h2 id="h-notes">Notes</h2>
       <ul>
-        <li>Per facilitar la lectura, cada servei es mostra com una llista de parades amb la seva hora.</li>
-        <li>Hi ha una vista en taula (plegable) per a qui la prefereixi.</li>
-        <li>Consell: amb lector de pantalla, navega per títols (H) i per llistes (L).</li>
+        <li>Per facilitar la lectura, cada servei mostra el recorregut com una sola frase amb totes les parades.</li>
+        <li>Consell: amb lector de pantalla, navega per títols (H) i per botons.</li>
       </ul>
     </section>
   </main>
@@ -53,6 +54,6 @@
     <p>Generat automàticament a partir del CSV d’horaris.</p>
   </footer>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=8" defer></script>
 </body>
 </html>
