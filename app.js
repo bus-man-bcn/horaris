@@ -1,4 +1,4 @@
-// Accessible UI: 2 blocs de botons + toggle per botó (aria-expanded) sense <details>
+// Accessible rendering for TalkBack/VoiceOver (12 botons + lectura fluida)
 function el(tag, attrs = {}, children = []) {
   const n = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
@@ -10,10 +10,6 @@ function el(tag, attrs = {}, children = []) {
   return n;
 }
 
-function cssSafe(s){
-  return String(s).replace(/[^a-zA-Z0-9_-]+/g, "_");
-}
-
 function speakBusType(bt){
   if (bt === "e22") return "E 22";
   if (bt === "e23") return "E 23";
@@ -21,96 +17,101 @@ function speakBusType(bt){
 }
 
 function routeSentence(stops){
+  // Una sola frase perquè el lector ho llegeixi seguit
   const parts = stops.map(s => `${s.time} ${s.stop}`);
   return "Recorregut: " + parts.join("; ") + ".";
 }
 
-function tripLabel(tr, bt){
-  return `Servei ${speakBusType(bt)}. Sortida ${tr.start_time}. Arribada ${tr.end_time}.`;
+function summaryAria(tr, bt){
+  return `Sortida ${tr.start_time}. Arribada ${tr.end_time}. Servei ${speakBusType(bt)}.`;
 }
 
-function makeTrip(tr, bt, uid){
-  const wrap = el("div", { class: "trip" });
-  const panelId = `trip_${uid}`;
+function makeTripDetails(tr, bt){
+  const details = el("details", { class: "trip" });
 
-  const btn = el("button", {
-    class: "trip-toggle",
-    type: "button",
-    "aria-expanded": "false",
-    "aria-controls": panelId,
-    "aria-label": tripLabel(tr, bt)
-  });
+  // IMPORTANT: un sol text node al summary per lectura seguida
+  const visible = `Servei ${speakBusType(bt)}. Sortida ${tr.start_time}. Arribada ${tr.end_time}.`;
+  const summary = el("summary", { "aria-label": summaryAria(tr, bt) }, [
+    document.createTextNode(visible)
+  ]);
 
-  btn.appendChild(el("span", { class:"meta", text: tripLabel(tr, bt) }));
-  btn.appendChild(el("span", { class:"hint", text: "Toca per mostrar o amagar el recorregut." }));
+  details.appendChild(summary);
 
-  const content = el("div", { class:"trip-content", id: panelId, hidden: "" });
-  content.appendChild(el("p", { text: routeSentence(tr.stops) }));
+  const inner = el("div", { class: "inner" });
 
-  btn.addEventListener("click", () => {
-    const expanded = btn.getAttribute("aria-expanded") === "true";
-    btn.setAttribute("aria-expanded", expanded ? "false" : "true");
-    if (expanded) {
-      content.setAttribute("hidden", "");
-    } else {
-      content.removeAttribute("hidden");
-    }
-  });
+  // Frase “tot seguit”
+  inner.appendChild(el("p", { class: "route-sentence" }, [
+    document.createTextNode(routeSentence(tr.stops))
+  ]));
 
-  wrap.appendChild(btn);
-  wrap.appendChild(content);
-  return wrap;
-}
-
-function showPanel(panelKey){
-  const panels = document.getElementById("panels");
-  panels.querySelectorAll(".panel").forEach(p => p.setAttribute("aria-hidden","true"));
-
-  const target = document.getElementById(`panel_${cssSafe(panelKey)}`);
-  if (target) {
-    target.setAttribute("aria-hidden","false");
-    const h = target.querySelector("h3");
-    if (h) {
-      h.setAttribute("tabindex","-1");
-      h.focus();
-    }
+  // Llista (una a una)
+  const ol = el("ol", {});
+  for (const st of tr.stops) {
+    const li = el("li", {});
+    li.appendChild(el("time", { datetime: st.time, text: st.time }));
+    li.appendChild(document.createTextNode(" — " + st.stop));
+    ol.appendChild(li);
   }
+  inner.appendChild(ol);
 
-  // update buttons aria-pressed
-  document.querySelectorAll(".picker button").forEach(b => {
-    b.setAttribute("aria-pressed", b.dataset.target === panelKey ? "true" : "false");
-  });
+  details.appendChild(inner);
+  return details;
 }
 
 function buildUI(data){
+  const picker = document.getElementById("picker");
+  const panels = document.getElementById("panels");
   const loading = document.getElementById("loading");
-  const panelsRoot = document.getElementById("panels");
-  const pickerMB = document.getElementById("picker-mb");
-  const pickerMO = document.getElementById("picker-mo");
-
   loading.textContent = "";
+
   const sections = data.sections || [];
   if (!sections.length){
     loading.textContent = "No hi ha dades.";
     return;
   }
 
+  // Build 12 entries: (4 seccions) x (3 dies)
   const entries = [];
   for (const sec of sections){
     for (const day of (sec.days || [])){
-      entries.push({ key: `${sec.id}__${day.name}`, sec, day });
+      entries.push({
+        key: `${sec.id}__${day.name}`,
+        sec,
+        day
+      });
     }
   }
 
-  // Create panels first
-  let tripUid = 0;
-  for (const e of entries){
-    const panelKey = e.key;
-    const panel = el("div", { class:"panel", id:`panel_${cssSafe(panelKey)}`, "aria-hidden":"true" });
+  // Sort order: as requested (4 blocs en ordre sec, i dins dia en ordre del JSON)
+  // Assume sec order already correct in data.json
 
-    panel.appendChild(el("h3", { text: `${e.sec.title} — ${e.day.name}` }));
+  // Panels
+  for (const e of entries){
+    const panel = el("div", { class: "panel", id: `panel_${cssSafe(e.key)}`, "aria-hidden": "true" });
+
+    const h = el("h3", { id: `ph_${cssSafe(e.key)}` }, [
+      document.createTextNode(`${e.sec.title} — ${e.day.name}`)
+    ]);
+    panel.appendChild(h);
+
+    // Bus groups ordered (e22/e23 then semidirecte)
+    // Dins de cada secció: 2 botons (Directes / Semidirectes)
+    const kindWrap = el("div", { class: "kind-picker", role: "group", "aria-label": "Filtre de serveis" });
+    const btnDirect = el("button", { type: "button", class: "kind-btn", "aria-pressed": "false" }, [document.createTextNode("Directes")]);
+    const btnSemi = el("button", { type: "button", class: "kind-btn", "aria-pressed": "false" }, [document.createTextNode("Semidirectes")]);
+    kindWrap.appendChild(btnDirect);
+    kindWrap.appendChild(btnSemi);
+    panel.appendChild(kindWrap);
+
+    const directBox = el("div", { class: "kind-panel", "data-kind": "direct" });
+    const semiBox = el("div", { class: "kind-panel", "data-kind": "semi" });
+    panel.appendChild(directBox);
+    panel.appendChild(semiBox);
 
     const order = e.sec.busTypeOrder || ["e22","e23","semidirecte"];
+    let hasDirect = false;
+    let hasSemi = false;
+
     for (const bt of order){
       const trips = (e.day.buses && e.day.buses[bt]) ? e.day.buses[bt] : [];
       if (!trips.length) continue;
@@ -122,30 +123,99 @@ function buildUI(data){
         tripUid += 1;
         grp.appendChild(makeTrip(tr, bt, tripUid));
       }
-      panel.appendChild(grp);
+
+      if (bt === "semidirecte"){
+        hasSemi = true;
+        semiBox.appendChild(grp);
+      } else {
+        hasDirect = true;
+        directBox.appendChild(grp);
+      }
     }
 
-    panelsRoot.appendChild(panel);
+    function showKind(kind){
+      const isDirect = kind === "direct";
+      btnDirect.setAttribute("aria-pressed", isDirect ? "true" : "false");
+      btnSemi.setAttribute("aria-pressed", isDirect ? "false" : "true");
+
+      if (isDirect){
+        directBox.removeAttribute("hidden");
+        semiBox.setAttribute("hidden", "");
+      } else {
+        semiBox.removeAttribute("hidden");
+        directBox.setAttribute("hidden", "");
+      }
+    }
+
+    if (!hasDirect){
+      btnDirect.disabled = true;
+      btnDirect.setAttribute("aria-disabled","true");
+    }
+    if (!hasSemi){
+      btnSemi.disabled = true;
+      btnSemi.setAttribute("aria-disabled","true");
+    }
+
+    btnDirect.addEventListener("click", () => showKind("direct"));
+    btnSemi.addEventListener("click", () => showKind("semi"));
+
+    showKind(hasDirect ? "direct" : "semi");
+      panel.appendChild(group);
+    }
+
+    panels.appendChild(panel);
   }
 
-  // Create buttons split into 2 blocks
-  let firstPanelKey = null;
+  // Buttons
+  let firstKey = null;
   for (const e of entries){
-    if (!firstPanelKey) firstPanelKey = e.key;
+    if (!firstKey) firstKey = e.key;
 
     const btn = el("button", {
-      type:"button",
-      "aria-pressed":"false",
-      "data-target": e.key
-    }, [document.createTextNode(`${e.sec.title} · ${e.day.name}`)]);
+      type: "button",
+      "data-target": e.key,
+      "aria-pressed": "false"
+    }, []);
 
-    btn.addEventListener("click", () => showPanel(e.key));
+    // Text visible: 2 línies, però sense tags dins frase (lector ho llegeix bé igual)
+    const line1 = `${e.sec.title}`;
+    const line2 = `${e.day.name}`;
+    btn.appendChild(el("span", { text: line1 }));
+    btn.appendChild(el("span", { class:"visually-hidden", text:" — " }));
+    btn.appendChild(el("span", { text: " " + line2 }));
 
-    const isMB = (e.sec.id === "m2b" || e.sec.id === "b2m");
-    (isMB ? pickerMB : pickerMO).appendChild(btn);
+    btn.addEventListener("click", () => select(e.key));
+    picker.appendChild(btn);
   }
 
-  if (firstPanelKey) showPanel(firstPanelKey);
+  function select(key){
+    // Update buttons
+    for (const b of picker.querySelectorAll("button")){
+      const active = b.getAttribute("data-target") === key;
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+    }
+    // Update panels
+    for (const p of panels.querySelectorAll(".panel")){
+      const isTarget = p.id === `panel_${cssSafe(key)}`;
+      p.setAttribute("aria-hidden", isTarget ? "false" : "true");
+    }
+    // Move focus to panel heading (nice for TalkBack/VoiceOver)
+    const heading = document.getElementById(`ph_${cssSafe(key)}`);
+    if (heading) heading.focus?.();
+    // If focus() doesn't work on heading, set tabindex and focus
+    if (heading && !heading.hasAttribute("tabindex")){
+      heading.setAttribute("tabindex","-1");
+      heading.focus();
+    }
+  }
+
+  // Default selection
+  select(firstKey);
+}
+
+function cssSafe(s){
+  // Safe id
+  return String(s).replace(/[^a-zA-Z0-9_-]+/g, "_");
 }
 
 fetch("data.json")
