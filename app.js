@@ -1,6 +1,4 @@
 // Accessible rendering for TalkBack/VoiceOver (12 botons + lectura fluida)
-// Versió: sense <details>/<summary> per evitar "està replegat" a TalkBack.
-
 function el(tag, attrs = {}, children = []) {
   const n = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
@@ -24,49 +22,35 @@ function routeSentence(stops){
   return "Recorregut: " + parts.join("; ") + ".";
 }
 
-function tripHeading(tr, bt){
+function summaryAria(tr, bt){
   return `Servei ${speakBusType(bt)}. Sortida ${tr.start_time}. Arribada ${tr.end_time}.`;
 }
 
-function makeTripCard(tr, bt){
-  const card = el("div", { class: "trip" });
+function makeTripDetails(tr, bt){
+  const details = el("details", { class: "trip" });
 
-  // Capçalera (una sola frase)
-  card.appendChild(el("h5", { class: "trip-title" }, [
-    document.createTextNode(tripHeading(tr, bt))
-  ]));
+  // IMPORTANT: un sol text node al summary per lectura seguida
+  const visible = `Servei ${speakBusType(bt)}. Sortida ${tr.start_time}. Arribada ${tr.end_time}.`;
+  const summary = el("summary", { "aria-label": summaryAria(tr, bt) }, [
+    document.createTextNode(visible)
+  ]);
+
+  details.appendChild(summary);
+
+  const inner = el("div", { class: "inner" });
 
   // Frase “tot seguit”
-  card.appendChild(el("p", { class: "route-sentence" }, [
+  inner.appendChild(el("p", { class: "route-sentence" }, [
     document.createTextNode(routeSentence(tr.stops))
   ]));
 
-  // Llista (una a una)
-  const ol = el("ol", { class: "stops" });
-  for (const st of tr.stops) {
-    const li = el("li", {});
-    li.appendChild(el("time", { datetime: st.time, text: st.time }));
-    li.appendChild(document.createTextNode(" — " + st.stop));
-    ol.appendChild(li);
-  }
-  card.appendChild(ol);
 
-  return card;
-}
-
-function cssSafe(s){
-  return String(s).replace(/[^a-zA-Z0-9_-]+/g, "_");
-}
-
-function sectionLine(secId){
-  // 2 grups al selector
-  if (secId === "m2b" || secId === "b2m") return "mb";
-  return "om"; // o2b / b2o
+  details.appendChild(inner);
+  return details;
 }
 
 function buildUI(data){
-  const pickerMB = document.getElementById("picker-mb");
-  const pickerOM = document.getElementById("picker-om");
+  const picker = document.getElementById("picker");
   const panels = document.getElementById("panels");
   const loading = document.getElementById("loading");
   loading.textContent = "";
@@ -89,18 +73,19 @@ function buildUI(data){
     }
   }
 
+  // Sort order: as requested (4 blocs en ordre sec, i dins dia en ordre del JSON)
+  // Assume sec order already correct in data.json
+
   // Panels
   for (const e of entries){
-    const panelId = `panel_${cssSafe(e.key)}`;
-    const panel = el("div", { class: "panel", id: panelId, "aria-hidden": "true" });
+    const panel = el("div", { class: "panel", id: `panel_${cssSafe(e.key)}`, "aria-hidden": "true" });
 
-    const headingId = `ph_${cssSafe(e.key)}`;
-    const h = el("h3", { id: headingId }, [
+    const h = el("h3", { id: `ph_${cssSafe(e.key)}` }, [
       document.createTextNode(`${e.sec.title} — ${e.day.name}`)
     ]);
     panel.appendChild(h);
 
-    // Bus groups ordered (per data.json)
+    // Bus groups ordered (e22/e23 then semidirecte)
     const order = e.sec.busTypeOrder || ["e22","e23","semidirecte"];
     for (const bt of order){
       const trips = (e.day.buses && e.day.buses[bt]) ? e.day.buses[bt] : [];
@@ -109,24 +94,23 @@ function buildUI(data){
       const group = el("div", { class:"bus-group" });
       group.appendChild(el("h4", {}, [document.createTextNode(speakBusType(bt))]));
 
+      // Quick hint (plain text, no <strong> mid-sentence)
+      group.appendChild(el("p", { class:"muted" }, [
+        document.createTextNode("Toca un servei per obrir el detall.")
+      ]));
+
       for (const tr of trips){
-        group.appendChild(makeTripCard(tr, bt));
+        group.appendChild(makeTripDetails(tr, bt));
       }
       panel.appendChild(group);
-    }
-
-    // Si no hi ha res, un missatge curt
-    if (!panel.querySelector(".bus-group")){
-      panel.appendChild(el("p", { class:"muted" }, [document.createTextNode("No hi ha horaris per aquesta selecció.")]));
     }
 
     panels.appendChild(panel);
   }
 
-  // Buttons (repartits en 2 pickers)
+  // Buttons
   let firstKey = null;
-
-  function addButton(e){
+  for (const e of entries){
     if (!firstKey) firstKey = e.key;
 
     const btn = el("button", {
@@ -135,21 +119,20 @@ function buildUI(data){
       "aria-pressed": "false"
     }, []);
 
-    // Text visible (evitem tags dins frase)
-    btn.appendChild(el("span", { text: e.sec.title }));
+    // Text visible: 2 línies, però sense tags dins frase (lector ho llegeix bé igual)
+    const line1 = `${e.sec.title}`;
+    const line2 = `${e.day.name}`;
+    btn.appendChild(el("span", { text: line1 }));
     btn.appendChild(el("span", { class:"visually-hidden", text:" — " }));
-    btn.appendChild(el("span", { text: " " + e.day.name }));
+    btn.appendChild(el("span", { text: " " + line2 }));
 
     btn.addEventListener("click", () => select(e.key));
-    const line = sectionLine(e.sec.id);
-    (line === "mb" ? pickerMB : pickerOM).appendChild(btn);
+    picker.appendChild(btn);
   }
 
-  for (const e of entries) addButton(e);
-
   function select(key){
-    // Update buttons (tots dos pickers)
-    for (const b of document.querySelectorAll("#picker-mb button, #picker-om button")){
+    // Update buttons
+    for (const b of picker.querySelectorAll("button")){
       const active = b.getAttribute("data-target") === key;
       b.setAttribute("aria-pressed", active ? "true" : "false");
     }
@@ -158,15 +141,23 @@ function buildUI(data){
       const isTarget = p.id === `panel_${cssSafe(key)}`;
       p.setAttribute("aria-hidden", isTarget ? "false" : "true");
     }
-    // Focus al títol del panel
+    // Move focus to panel heading (nice for TalkBack/VoiceOver)
     const heading = document.getElementById(`ph_${cssSafe(key)}`);
-    if (heading){
-      if (!heading.hasAttribute("tabindex")) heading.setAttribute("tabindex","-1");
+    if (heading) heading.focus?.();
+    // If focus() doesn't work on heading, set tabindex and focus
+    if (heading && !heading.hasAttribute("tabindex")){
+      heading.setAttribute("tabindex","-1");
       heading.focus();
     }
   }
 
+  // Default selection
   select(firstKey);
+}
+
+function cssSafe(s){
+  // Safe id
+  return String(s).replace(/[^a-zA-Z0-9_-]+/g, "_");
 }
 
 fetch("data.json")
