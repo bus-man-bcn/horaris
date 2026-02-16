@@ -3,7 +3,7 @@ import json, re
 from pathlib import Path
 
 # -------- Config --------
-CSV_IN = Path("horaris.csv")
+CSV_IN = Path("horaris_manresa_barcelona_fullmatrix_tipusbus.csv")
 OUT = Path("data.json")
 
 DAY_ORDER = [

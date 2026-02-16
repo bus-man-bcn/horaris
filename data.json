@@ -11,16 +11,1412 @@
         {
           "name": "Dilluns a divendres feiners, excepte agost",
           "buses": {
-            "e22": [],
-            "e23": [],
+            "e22": [
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 1,
+                "start_time": "05:37",
+                "end_time": "06:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "05:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 4,
+                "start_time": "06:07",
+                "end_time": "07:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 8,
+                "start_time": "06:22",
+                "end_time": "07:25",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:22"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:25"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 9,
+                "start_time": "06:22",
+                "end_time": "07:25",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:22"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:25"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 10,
+                "start_time": "06:37",
+                "end_time": "07:51",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:51"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 11,
+                "start_time": "06:37",
+                "end_time": "07:45",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:45"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 12,
+                "start_time": "06:47",
+                "end_time": "07:41",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:41"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 15,
+                "start_time": "06:57",
+                "end_time": "08:05",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:57"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:05"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 16,
+                "start_time": "06:57",
+                "end_time": "08:01",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:57"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:01"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 17,
+                "start_time": "07:07",
+                "end_time": "08:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 18,
+                "start_time": "07:22",
+                "end_time": "08:36",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:22"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:36"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 23,
+                "start_time": "07:37",
+                "end_time": "09:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 24,
+                "start_time": "07:52",
+                "end_time": "09:10",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:52"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:10"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 27,
+                "start_time": "08:15",
+                "end_time": "09:20",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "08:15"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:20"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 29,
+                "start_time": "08:22",
+                "end_time": "09:25",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "08:22"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:25"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 30,
+                "start_time": "08:37",
+                "end_time": "09:45",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "08:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:45"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 32,
+                "start_time": "08:52",
+                "end_time": "10:00",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "08:52"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:00"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 34,
+                "start_time": "09:07",
+                "end_time": "10:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "09:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 36,
+                "start_time": "09:37",
+                "end_time": "10:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "09:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 38,
+                "start_time": "10:07",
+                "end_time": "11:05",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "10:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:05"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 40,
+                "start_time": "10:37",
+                "end_time": "11:36",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "10:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:36"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 42,
+                "start_time": "11:07",
+                "end_time": "12:05",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "11:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:05"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 44,
+                "start_time": "11:37",
+                "end_time": "12:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "11:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 46,
+                "start_time": "12:07",
+                "end_time": "13:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "12:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 48,
+                "start_time": "12:37",
+                "end_time": "13:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "12:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 50,
+                "start_time": "13:07",
+                "end_time": "14:30",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "13:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "14:30"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 52,
+                "start_time": "13:37",
+                "end_time": "14:36",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "13:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "14:36"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 53,
+                "start_time": "14:07",
+                "end_time": "15:05",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "14:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:05"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 55,
+                "start_time": "14:37",
+                "end_time": "15:36",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "14:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:36"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 58,
+                "start_time": "15:15",
+                "end_time": "16:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "15:15"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 59,
+                "start_time": "15:37",
+                "end_time": "16:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "15:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 61,
+                "start_time": "16:07",
+                "end_time": "17:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "16:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 68,
+                "start_time": "16:37",
+                "end_time": "17:40",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "16:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:40"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 69,
+                "start_time": "17:07",
+                "end_time": "18:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 72,
+                "start_time": "17:37",
+                "end_time": "18:40",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:40"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 74,
+                "start_time": "17:52",
+                "end_time": "18:51",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:52"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:51"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 78,
+                "start_time": "18:22",
+                "end_time": "19:20",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "18:22"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:20"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 80,
+                "start_time": "18:37",
+                "end_time": "19:35",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "18:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:35"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 84,
+                "start_time": "19:07",
+                "end_time": "20:10",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "20:10"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 86,
+                "start_time": "19:22",
+                "end_time": "20:25",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:22"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "20:25"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 87,
+                "start_time": "19:37",
+                "end_time": "20:36",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "20:36"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 88,
+                "start_time": "20:07",
+                "end_time": "21:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "20:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 90,
+                "start_time": "20:37",
+                "end_time": "21:40",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "20:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:40"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 92,
+                "start_time": "21:15",
+                "end_time": "22:05",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "21:15"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "22:05"
+                  }
+                ]
+              }
+            ],
+            "e23": [
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 3,
+                "start_time": "05:40",
+                "end_time": "06:55",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "05:40"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "06:25"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:55"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 7,
+                "start_time": "06:00",
+                "end_time": "07:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "06:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "06:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 22,
+                "start_time": "07:20",
+                "end_time": "09:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "07:20"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "08:05"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 35,
+                "start_time": "09:15",
+                "end_time": "10:34",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "09:15"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "10:00"
+                  },
+                  {
+                    "stop": "BCN - Maria Cristina",
+                    "time": "10:34"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 43,
+                "start_time": "11:00",
+                "end_time": "12:30",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "11:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "11:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:30"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 51,
+                "start_time": "13:00",
+                "end_time": "14:30",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "13:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "13:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "14:30"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 57,
+                "start_time": "14:50",
+                "end_time": "16:20",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "14:50"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "15:35"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:20"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 67,
+                "start_time": "16:20",
+                "end_time": "17:50",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "16:20"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "17:05"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:50"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 77,
+                "start_time": "18:00",
+                "end_time": "19:30",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "18:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "18:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:30"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 85,
+                "start_time": "19:00",
+                "end_time": "20:10",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "19:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "19:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "20:10"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 89,
+                "start_time": "20:00",
+                "end_time": "21:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "20:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "20:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 94,
+                "start_time": "22:15",
+                "end_time": "23:45",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "22:15"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "23:00"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "23:45"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         },
         {
           "name": "Dissabtes i Festius",
           "buses": {
-            "e22": [],
-            "e23": [],
+            "e22": [
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 5,
+                "start_time": "07:07",
+                "end_time": "08:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 8,
+                "start_time": "09:37",
+                "end_time": "10:36",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "09:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:36"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 14,
+                "start_time": "17:07",
+                "end_time": "18:06",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:06"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 19,
+                "start_time": "21:07",
+                "end_time": "22:10",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "21:07"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "22:10"
+                  }
+                ]
+              }
+            ],
+            "e23": [
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 2,
+                "start_time": "02:00",
+                "end_time": "03:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "02:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "02:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "03:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 3,
+                "start_time": "04:00",
+                "end_time": "05:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "04:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "04:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "05:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 4,
+                "start_time": "06:00",
+                "end_time": "07:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "06:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "06:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 6,
+                "start_time": "08:00",
+                "end_time": "09:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "08:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "08:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 9,
+                "start_time": "10:00",
+                "end_time": "11:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "10:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "10:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 11,
+                "start_time": "12:00",
+                "end_time": "13:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "12:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "12:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 12,
+                "start_time": "14:00",
+                "end_time": "15:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "14:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "14:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 13,
+                "start_time": "16:00",
+                "end_time": "17:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "16:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "16:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 16,
+                "start_time": "18:00",
+                "end_time": "19:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "18:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "18:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 18,
+                "start_time": "20:00",
+                "end_time": "21:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "20:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "20:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 20,
+                "start_time": "22:00",
+                "end_time": "23:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "22:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "22:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "23:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 1,
+                "start_time": "00:00",
+                "end_time": "01:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "00:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "00:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "01:15"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         },
@@ -28,7 +1424,338 @@
           "name": "Diumenges, excepte festiu",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 22,
+                "start_time": "02:00",
+                "end_time": "03:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "02:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "02:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "03:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 23,
+                "start_time": "04:00",
+                "end_time": "05:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "04:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "04:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "05:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 24,
+                "start_time": "06:00",
+                "end_time": "07:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "06:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "06:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 25,
+                "start_time": "08:00",
+                "end_time": "09:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "08:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "08:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 26,
+                "start_time": "09:00",
+                "end_time": "10:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "09:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "09:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 27,
+                "start_time": "10:00",
+                "end_time": "11:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "10:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "10:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 29,
+                "start_time": "12:00",
+                "end_time": "13:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "12:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "12:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 30,
+                "start_time": "14:00",
+                "end_time": "15:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "14:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "14:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 31,
+                "start_time": "16:00",
+                "end_time": "17:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "16:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "16:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 32,
+                "start_time": "17:00",
+                "end_time": "18:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "17:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "17:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 33,
+                "start_time": "18:00",
+                "end_time": "19:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "18:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "18:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 35,
+                "start_time": "20:00",
+                "end_time": "21:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "20:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "20:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 36,
+                "start_time": "21:00",
+                "end_time": "22:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "21:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "21:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "22:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 37,
+                "start_time": "22:00",
+                "end_time": "23:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "22:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "22:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "23:15"
+                  }
+                ]
+              },
+              {
+                "section": "m2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 21,
+                "start_time": "00:00",
+                "end_time": "01:15",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "00:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "00:45"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "01:15"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         }
@@ -45,7 +1772,782 @@
         {
           "name": "Dilluns a divendres feiners, excepte agost",
           "buses": {
-            "e22": [],
+            "e22": [
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 1,
+                "start_time": "04:54",
+                "end_time": "05:52",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "04:54"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "05:52"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 5,
+                "start_time": "05:30",
+                "end_time": "06:57",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "05:30"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "06:57"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 7,
+                "start_time": "06:00",
+                "end_time": "07:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "06:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 9,
+                "start_time": "06:34",
+                "end_time": "07:42",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "07:42"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 12,
+                "start_time": "07:00",
+                "end_time": "08:07",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "07:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "08:07"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 11,
+                "start_time": "07:04",
+                "end_time": "08:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:04"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "08:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 15,
+                "start_time": "07:34",
+                "end_time": "08:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "08:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 19,
+                "start_time": "08:00",
+                "end_time": "09:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "08:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "09:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 20,
+                "start_time": "08:09",
+                "end_time": "09:07",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:09"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "09:07"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 22,
+                "start_time": "08:15",
+                "end_time": "09:27",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "08:15"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "09:27"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 25,
+                "start_time": "09:04",
+                "end_time": "10:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:04"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "10:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 27,
+                "start_time": "09:30",
+                "end_time": "10:42",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "09:30"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "10:42"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 29,
+                "start_time": "10:00",
+                "end_time": "11:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "10:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "11:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 30,
+                "start_time": "10:34",
+                "end_time": "11:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "11:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 33,
+                "start_time": "11:00",
+                "end_time": "12:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "11:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "12:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 35,
+                "start_time": "11:30",
+                "end_time": "12:42",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "11:30"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "12:42"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 37,
+                "start_time": "12:04",
+                "end_time": "13:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:04"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "13:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 38,
+                "start_time": "12:30",
+                "end_time": "13:35",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "12:30"
+                  },
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "13:35"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 41,
+                "start_time": "13:00",
+                "end_time": "14:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "13:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "14:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 42,
+                "start_time": "13:34",
+                "end_time": "14:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "14:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 44,
+                "start_time": "14:00",
+                "end_time": "15:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "14:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "15:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 45,
+                "start_time": "14:30",
+                "end_time": "15:42",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "14:30"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "15:42"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 49,
+                "start_time": "15:04",
+                "end_time": "16:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:04"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "16:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 53,
+                "start_time": "15:30",
+                "end_time": "16:42",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "15:30"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "16:42"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 54,
+                "start_time": "16:00",
+                "end_time": "17:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "16:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 57,
+                "start_time": "16:19",
+                "end_time": "17:12",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:19"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:12"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 59,
+                "start_time": "16:34",
+                "end_time": "17:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "17:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 61,
+                "start_time": "16:45",
+                "end_time": "18:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "16:45"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "18:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 64,
+                "start_time": "17:00",
+                "end_time": "18:17",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "18:17"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 65,
+                "start_time": "17:19",
+                "end_time": "18:17",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:19"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "18:17"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 67,
+                "start_time": "17:30",
+                "end_time": "18:47",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:30"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "18:47"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 72,
+                "start_time": "17:45",
+                "end_time": "19:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:45"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 74,
+                "start_time": "18:00",
+                "end_time": "19:17",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "18:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:17"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 76,
+                "start_time": "18:15",
+                "end_time": "19:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "18:15"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 78,
+                "start_time": "18:34",
+                "end_time": "19:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 79,
+                "start_time": "18:49",
+                "end_time": "19:47",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:49"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "19:47"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 82,
+                "start_time": "19:04",
+                "end_time": "20:02",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:04"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "20:02"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 83,
+                "start_time": "19:34",
+                "end_time": "20:32",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:34"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "20:32"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 85,
+                "start_time": "19:49",
+                "end_time": "20:47",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:49"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "20:47"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 86,
+                "start_time": "20:15",
+                "end_time": "21:27",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "20:15"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "21:27"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 88,
+                "start_time": "20:45",
+                "end_time": "21:57",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "20:45"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "21:57"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 89,
+                "start_time": "21:19",
+                "end_time": "22:17",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:19"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "22:17"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e22",
+                "trip_id": 91,
+                "start_time": "21:45",
+                "end_time": "23:07",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "21:45"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "23:07"
+                  }
+                ]
+              }
+            ],
             "e23": [],
             "semidirecte": []
           }
@@ -53,7 +2555,80 @@
         {
           "name": "Dissabtes i Festius",
           "buses": {
-            "e22": [],
+            "e22": [
+              {
+                "section": "b2m",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 5,
+                "start_time": "08:19",
+                "end_time": "09:10",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:19"
+                  },
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "09:10"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 8,
+                "start_time": "11:19",
+                "end_time": "12:10",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:19"
+                  },
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "12:10"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 14,
+                "start_time": "18:44",
+                "end_time": "19:35",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:44"
+                  },
+                  {
+                    "stop": "MANRESA - Hospital de Sant Joan de Déu",
+                    "time": "19:35"
+                  }
+                ]
+              },
+              {
+                "section": "b2m",
+                "day": "Dissabtes i Festius",
+                "busType": "e22",
+                "trip_id": 19,
+                "start_time": "22:40",
+                "end_time": "23:52",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "22:40"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "23:52"
+                  }
+                ]
+              }
+            ],
             "e23": [],
             "semidirecte": []
           }
@@ -80,7 +2655,756 @@
           "name": "Dilluns a divendres feiners, excepte agost",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 5,
+                "start_time": "06:00",
+                "end_time": "06:51",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "06:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "06:12"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:51"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 2,
+                "start_time": "06:02",
+                "end_time": "06:36",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "06:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 6,
+                "start_time": "06:32",
+                "end_time": "07:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "06:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 13,
+                "start_time": "06:47",
+                "end_time": "07:36",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "06:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 14,
+                "start_time": "06:50",
+                "end_time": "07:56",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "06:50"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "07:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:56"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 19,
+                "start_time": "07:15",
+                "end_time": "08:21",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "07:15"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "07:27"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 20,
+                "start_time": "07:20",
+                "end_time": "08:30",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "07:20"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "07:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:30"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 21,
+                "start_time": "07:47",
+                "end_time": "08:36",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "07:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 25,
+                "start_time": "07:50",
+                "end_time": "08:50",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "07:50"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "08:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:50"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 26,
+                "start_time": "08:17",
+                "end_time": "09:06",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "08:17"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:06"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 28,
+                "start_time": "08:32",
+                "end_time": "09:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "08:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 31,
+                "start_time": "08:47",
+                "end_time": "09:36",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "08:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 33,
+                "start_time": "09:00",
+                "end_time": "09:51",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "09:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "09:12"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:51"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 37,
+                "start_time": "09:45",
+                "end_time": "10:36",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "09:45"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "09:57"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 39,
+                "start_time": "10:27",
+                "end_time": "11:05",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "10:27"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:05"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 41,
+                "start_time": "11:00",
+                "end_time": "11:55",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "11:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "11:12"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "11:55"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 45,
+                "start_time": "11:47",
+                "end_time": "12:26",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "11:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:26"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 47,
+                "start_time": "12:25",
+                "end_time": "13:16",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "12:25"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "12:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:16"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 49,
+                "start_time": "13:02",
+                "end_time": "13:41",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "13:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:41"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 54,
+                "start_time": "14:02",
+                "end_time": "14:40",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "14:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "14:40"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 56,
+                "start_time": "14:40",
+                "end_time": "15:31",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "14:40"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "14:52"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:31"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 60,
+                "start_time": "15:37",
+                "end_time": "16:16",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "15:37"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:16"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 62,
+                "start_time": "16:00",
+                "end_time": "16:51",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "16:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "16:12"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:51"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 64,
+                "start_time": "16:30",
+                "end_time": "17:25",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "16:30"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "16:42"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:25"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 63,
+                "start_time": "16:32",
+                "end_time": "17:10",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "16:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:10"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 70,
+                "start_time": "17:00",
+                "end_time": "17:51",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "17:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "17:12"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:51"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 65,
+                "start_time": "17:02",
+                "end_time": "17:36",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "17:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 66,
+                "start_time": "17:02",
+                "end_time": "17:50",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "17:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:50"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 71,
+                "start_time": "17:17",
+                "end_time": "17:56",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "17:17"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:56"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 73,
+                "start_time": "17:52",
+                "end_time": "18:31",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "17:52"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:31"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 75,
+                "start_time": "18:15",
+                "end_time": "19:11",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "18:15"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "18:27"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:11"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 79,
+                "start_time": "18:30",
+                "end_time": "19:25",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "18:30"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "18:42"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:25"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 76,
+                "start_time": "18:32",
+                "end_time": "19:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "18:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 81,
+                "start_time": "18:47",
+                "end_time": "19:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "18:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 82,
+                "start_time": "18:52",
+                "end_time": "19:40",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "18:52"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:40"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 83,
+                "start_time": "19:02",
+                "end_time": "19:51",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "19:02"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:51"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 91,
+                "start_time": "21:00",
+                "end_time": "21:56",
+                "stops": [
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "21:00"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "21:12"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "21:56"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 93,
+                "start_time": "22:47",
+                "end_time": "23:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "22:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "23:21"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         },
@@ -88,7 +3412,80 @@
           "name": "Dissabtes i Festius",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "o2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 7,
+                "start_time": "08:47",
+                "end_time": "09:36",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "08:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "09:36"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 10,
+                "start_time": "11:32",
+                "end_time": "12:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "11:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 15,
+                "start_time": "17:32",
+                "end_time": "18:21",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "17:32"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:21"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 17,
+                "start_time": "19:42",
+                "end_time": "20:31",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "19:42"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "20:31"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         },
@@ -96,7 +3493,44 @@
           "name": "Diumenges, excepte festiu",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "o2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 28,
+                "start_time": "11:47",
+                "end_time": "12:25",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "11:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "12:25"
+                  }
+                ]
+              },
+              {
+                "section": "o2b",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 34,
+                "start_time": "18:47",
+                "end_time": "19:15",
+                "stops": [
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "18:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:15"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         }
@@ -114,7 +3548,1046 @@
           "name": "Dilluns a divendres feiners, excepte agost",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 2,
+                "start_time": "05:09",
+                "end_time": "05:48",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "05:09"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "05:38"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "05:48"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 3,
+                "start_time": "05:15",
+                "end_time": "06:23",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "05:15"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "06:13"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "06:23"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 4,
+                "start_time": "05:34",
+                "end_time": "06:13",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "05:34"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "06:13"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 6,
+                "start_time": "06:04",
+                "end_time": "07:03",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "06:53"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "07:03"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 8,
+                "start_time": "06:19",
+                "end_time": "07:08",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:19"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "06:58"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "07:08"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 10,
+                "start_time": "06:49",
+                "end_time": "07:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "06:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "07:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "07:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 13,
+                "start_time": "07:19",
+                "end_time": "07:42",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:19"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "07:42"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 16,
+                "start_time": "07:20",
+                "end_time": "08:28",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "07:20"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "08:18"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "08:28"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 14,
+                "start_time": "07:34",
+                "end_time": "07:57",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:34"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "07:57"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 17,
+                "start_time": "07:49",
+                "end_time": "08:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "08:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 18,
+                "start_time": "07:49",
+                "end_time": "08:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "07:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "08:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "08:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 21,
+                "start_time": "08:09",
+                "end_time": "08:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "08:09"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "08:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 23,
+                "start_time": "08:30",
+                "end_time": "09:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "08:30"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "09:23"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "09:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 24,
+                "start_time": "08:50",
+                "end_time": "10:03",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "08:50"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "09:53"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "10:03"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 26,
+                "start_time": "09:15",
+                "end_time": "10:08",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "09:15"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "10:08"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 28,
+                "start_time": "10:04",
+                "end_time": "10:48",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "10:38"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "10:48"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 31,
+                "start_time": "10:44",
+                "end_time": "11:23",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "10:44"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "11:23"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 32,
+                "start_time": "10:50",
+                "end_time": "12:03",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "10:50"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "11:53"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "12:03"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 34,
+                "start_time": "11:15",
+                "end_time": "12:18",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "11:15"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "12:08"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "12:18"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 36,
+                "start_time": "11:50",
+                "end_time": "12:45",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "11:50"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "12:45"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 39,
+                "start_time": "12:50",
+                "end_time": "14:03",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "12:50"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "13:53"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "14:03"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 40,
+                "start_time": "13:04",
+                "end_time": "13:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "13:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 43,
+                "start_time": "13:49",
+                "end_time": "14:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "13:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "14:23"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "14:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 46,
+                "start_time": "14:30",
+                "end_time": "15:23",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "14:30"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "15:23"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 47,
+                "start_time": "14:30",
+                "end_time": "15:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "14:30"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "15:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "15:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 48,
+                "start_time": "15:04",
+                "end_time": "15:53",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "15:43"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "15:53"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 50,
+                "start_time": "15:15",
+                "end_time": "16:23",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "15:15"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:13"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "16:23"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 51,
+                "start_time": "15:34",
+                "end_time": "16:23",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:34"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:13"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "16:23"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 52,
+                "start_time": "15:49",
+                "end_time": "16:28",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "15:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:28"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 55,
+                "start_time": "16:00",
+                "end_time": "17:03",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "16:00"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "17:03"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 56,
+                "start_time": "16:00",
+                "end_time": "17:03",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "16:00"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:53"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "17:03"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 58,
+                "start_time": "16:19",
+                "end_time": "16:53",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:19"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:53"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 60,
+                "start_time": "16:34",
+                "end_time": "17:08",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "16:34"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "17:08"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 62,
+                "start_time": "16:45",
+                "end_time": "17:48",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "16:45"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "17:38"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "17:48"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 63,
+                "start_time": "17:04",
+                "end_time": "17:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "17:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 66,
+                "start_time": "17:19",
+                "end_time": "18:08",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:19"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "17:58"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "18:08"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 68,
+                "start_time": "17:30",
+                "end_time": "18:28",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:30"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:28"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 69,
+                "start_time": "17:30",
+                "end_time": "18:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:30"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "18:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 71,
+                "start_time": "17:45",
+                "end_time": "18:53",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:45"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:43"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "18:53"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 70,
+                "start_time": "17:49",
+                "end_time": "18:28",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "17:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:28"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 73,
+                "start_time": "18:04",
+                "end_time": "18:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 77,
+                "start_time": "18:15",
+                "end_time": "19:08",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "18:15"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:58"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "19:08"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 75,
+                "start_time": "18:19",
+                "end_time": "18:53",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:19"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:53"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 80,
+                "start_time": "18:49",
+                "end_time": "19:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "18:49"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "19:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "19:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 81,
+                "start_time": "19:00",
+                "end_time": "20:13",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "19:00"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "20:03"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "20:13"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 84,
+                "start_time": "19:34",
+                "end_time": "20:18",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "19:34"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "20:08"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "20:18"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 87,
+                "start_time": "20:30",
+                "end_time": "21:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "20:30"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "21:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "21:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 90,
+                "start_time": "21:20",
+                "end_time": "22:18",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "21:20"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "22:18"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 92,
+                "start_time": "22:00",
+                "end_time": "23:13",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "22:00"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "23:03"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "23:13"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 93,
+                "start_time": "22:04",
+                "end_time": "22:43",
+                "stops": [
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "22:04"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "22:43"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dilluns a divendres feiners, excepte agost",
+                "busType": "e23",
+                "trip_id": 94,
+                "start_time": "23:40",
+                "end_time": "00:53",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "23:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "00:43"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "00:53"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         },
@@ -122,7 +4595,344 @@
           "name": "Dissabtes i Festius",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 1,
+                "start_time": "01:40",
+                "end_time": "02:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "01:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "02:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "02:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 2,
+                "start_time": "03:40",
+                "end_time": "04:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "03:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "04:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "04:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 3,
+                "start_time": "05:40",
+                "end_time": "06:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "05:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "06:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "06:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 4,
+                "start_time": "07:40",
+                "end_time": "08:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "07:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "08:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "08:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 6,
+                "start_time": "09:40",
+                "end_time": "10:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "09:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "10:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 7,
+                "start_time": "09:40",
+                "end_time": "10:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "09:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "10:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "10:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 9,
+                "start_time": "11:40",
+                "end_time": "12:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "11:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "12:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "12:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 10,
+                "start_time": "12:40",
+                "end_time": "13:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "12:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "13:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 11,
+                "start_time": "13:40",
+                "end_time": "14:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "13:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "14:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "14:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 12,
+                "start_time": "15:40",
+                "end_time": "16:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "15:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "16:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 13,
+                "start_time": "17:40",
+                "end_time": "18:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "18:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 15,
+                "start_time": "18:40",
+                "end_time": "19:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "18:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "19:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 16,
+                "start_time": "19:40",
+                "end_time": "20:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "19:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "20:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "20:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 17,
+                "start_time": "20:40",
+                "end_time": "21:33",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "20:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "21:33"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 18,
+                "start_time": "21:40",
+                "end_time": "22:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "21:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "22:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "22:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Dissabtes i Festius",
+                "busType": "e23",
+                "trip_id": 20,
+                "start_time": "23:40",
+                "end_time": "00:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "23:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "00:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "00:38"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         },
@@ -130,7 +4940,374 @@
           "name": "Diumenges, excepte festiu",
           "buses": {
             "e22": [],
-            "e23": [],
+            "e23": [
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 21,
+                "start_time": "01:40",
+                "end_time": "02:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "01:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "02:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "02:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 22,
+                "start_time": "03:40",
+                "end_time": "04:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "03:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "04:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "04:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 23,
+                "start_time": "05:40",
+                "end_time": "06:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "05:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "06:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "06:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 24,
+                "start_time": "07:40",
+                "end_time": "08:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "07:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "08:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "08:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 25,
+                "start_time": "09:40",
+                "end_time": "10:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "09:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "10:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "10:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 26,
+                "start_time": "10:40",
+                "end_time": "11:28",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "10:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "11:28"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 27,
+                "start_time": "11:40",
+                "end_time": "12:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "11:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "12:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "12:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 28,
+                "start_time": "13:40",
+                "end_time": "14:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "13:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "14:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "14:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 29,
+                "start_time": "14:40",
+                "end_time": "15:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "14:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "15:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "15:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 30,
+                "start_time": "15:40",
+                "end_time": "16:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "15:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "16:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "16:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 31,
+                "start_time": "17:40",
+                "end_time": "18:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "17:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "18:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "18:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 32,
+                "start_time": "18:40",
+                "end_time": "19:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "18:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "19:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "19:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 33,
+                "start_time": "19:40",
+                "end_time": "20:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "19:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "20:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "20:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 34,
+                "start_time": "19:40",
+                "end_time": "20:28",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "19:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "20:28"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 35,
+                "start_time": "21:40",
+                "end_time": "22:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "21:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "22:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "22:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 36,
+                "start_time": "22:40",
+                "end_time": "23:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "22:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "23:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "23:38"
+                  }
+                ]
+              },
+              {
+                "section": "b2o",
+                "day": "Diumenges, excepte festiu",
+                "busType": "e23",
+                "trip_id": 37,
+                "start_time": "23:40",
+                "end_time": "00:38",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "23:40"
+                  },
+                  {
+                    "stop": "OLESA - Plaça de l'Oli",
+                    "time": "00:28"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "00:38"
+                  }
+                ]
+              }
+            ],
             "semidirecte": []
           }
         }
