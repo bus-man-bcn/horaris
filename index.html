@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Horaris bus Manresa ↔ Barcelona (accessible)</title>
-  <meta name="description" content="Horaris en format accessible per a lectors de pantalla (TalkBack i VoiceOver)." />
+  <meta name="description" content="Horaris en format accessible per a TalkBack (Android) i VoiceOver (iPhone)." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,18 +13,23 @@
   <header class="site-header" role="banner">
     <h1>Horaris bus Manresa ↔ Barcelona</h1>
     <p class="lede">
-      Format pensat per ser llegit bé amb TalkBack (Android) i VoiceOver (iPhone).
-      Els horaris són orientatius i poden variar (trànsit, climatologia).
+      Format pensat per una lectura fluida amb TalkBack i VoiceOver. Selecciona un bloc i obre els serveis amb un botó.
     </p>
   </header>
 
   <main id="main" class="content" role="main" tabindex="-1">
     <section aria-labelledby="h-selector">
       <h2 id="h-selector">Selecciona direcció i tipus de dia</h2>
+
+      <h3 class="picker-title">Línia: Manresa - Barcelona</h3>
+      <div id="picker-mb" class="picker" role="group" aria-label="Selector Manresa - Barcelona"></div>
+
+      <h3 class="picker-title">Línia: Manresa - Olesa/Monistrol</h3>
+      <div id="picker-mo" class="picker" role="group" aria-label="Selector Manresa - Olesa o Monistrol"></div>
+
       <p class="muted">
-        Hi ha 12 botons: 4 direccions per 3 tipus de dia. En tocar un botó, es mostra el bloc corresponent.
+        Hi ha 12 botons (4 direccions × 3 tipus de dia), repartits en 2 blocs. En tocar un botó, es mostra el bloc corresponent.
       </p>
-      <div id="picker" class="picker" role="group" aria-label="Selector d'horaris"></div>
     </section>
 
     <section aria-live="polite" aria-labelledby="h-result">
@@ -36,9 +41,8 @@
     <section id="notes" aria-labelledby="h-notes">
       <h2 id="h-notes">Notes</h2>
       <ul>
-        <li>Per facilitar la lectura, cada servei inclou primer una frase amb tot el recorregut ("Recorregut: ...").</li>
-        <li>Després s'ofereix la llista de parades una a una.</li>
-        <li>Consell: amb lector de pantalla, navega per títols (H) i per botons.</li>
+        <li>Cada servei es pot obrir amb un botó (no és un “desplegable” natiu), per evitar missatges redundants de TalkBack.</li>
+        <li>Dins del servei només hi ha la frase “Recorregut: …” (sense llista duplicada).</li>
       </ul>
     </section>
   </main>
