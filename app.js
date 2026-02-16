@@ -24,6 +24,22 @@ function routeSentence(tr) {
   return `Recorregut: ${parts.join("; ")}.`;
 }
 
+function selectPanel(panelByKey, panelsRoot, targetPicker, key, pressedButton, doScroll) {
+  if (targetPicker) {
+    for (const btn of targetPicker.querySelectorAll("button")) btn.setAttribute("aria-pressed", "false");
+  }
+  if (pressedButton) pressedButton.setAttribute("aria-pressed", "true");
+
+  for (const p of panelsRoot.querySelectorAll(".panel")) p.setAttribute("aria-hidden", "true");
+  const panel = panelByKey.get(key);
+  if (panel) panel.setAttribute("aria-hidden", "false");
+
+  if (doScroll) {
+    const h = document.getElementById("h-result") || document.getElementById("h-resultats") || null;
+    if (h) h.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 function buildUI(data) {
   const loading = document.getElementById("loading");
   const panels = document.getElementById("panels");
@@ -48,6 +64,7 @@ function buildUI(data) {
 
     panel.appendChild(el("h3", { text: `${section.title} — ${day.name}` }));
 
+    // 2 botons: directes / semidirectes
     const btDirect = (section.busTypeOrder && section.busTypeOrder[0]) ? section.busTypeOrder[0] : "e22";
     const btSemi = "semidirecte";
 
@@ -88,6 +105,7 @@ function buildUI(data) {
     btnA.addEventListener("click", () => { setPressed(true); renderBusType(btDirect); });
     btnB.addEventListener("click", () => { setPressed(false); renderBusType(btSemi); });
 
+    // per defecte: directes, però SENSE fer focus ni scroll
     renderBusType(btDirect);
 
     panelByKey.set(key, panel);
@@ -96,38 +114,38 @@ function buildUI(data) {
   }
 
   function addPickerButton(targetPicker, label, key) {
-    const b = el("button", { type: "button", "aria-pressed": "false" }, [document.createTextNode(label)]);
+    const b = el("button", { type: "button", "aria-pressed": "false", "data-key": key }, [
+      document.createTextNode(label)
+    ]);
     b.addEventListener("click", () => {
-      for (const btn of targetPicker.querySelectorAll("button")) btn.setAttribute("aria-pressed", "false");
-      b.setAttribute("aria-pressed", "true");
-
-      for (const p of panels.querySelectorAll(".panel")) p.setAttribute("aria-hidden", "true");
-      const panel = panelByKey.get(key);
-      if (panel) panel.setAttribute("aria-hidden", "false");
-
-      const h = document.getElementById("h-result");
-      if (h) h.scrollIntoView({ behavior: "smooth", block: "start" });
+      selectPanel(panelByKey, panels, targetPicker, key, b, true);
     });
     targetPicker.appendChild(b);
+    return b;
   }
 
+  // Build panels + buttons
   for (const section of data.sections) {
     for (const day of section.days || []) {
       const key = makePanel(section, day);
-
       const isMB = (section.id === "m2b" || section.id === "b2m");
       const targetPicker = isMB ? pickerMB : pickerMO;
-
       addPickerButton(targetPicker, `${section.title} — ${day.name}`, key);
     }
   }
 
-  // default: first button of first picker
+  // Initial selection: show first panel WITHOUT scroll/jump
   const firstBtn = pickerMB.querySelector("button") || pickerMO.querySelector("button");
-  if (firstBtn) firstBtn.click();
+  if (firstBtn) {
+    const key = firstBtn.getAttribute("data-key");
+    const targetPicker = pickerMB.querySelector("button") ? pickerMB : pickerMO;
+    selectPanel(panelByKey, panels, targetPicker, key, firstBtn, false);
+  } else {
+    if (loading) loading.textContent = "No hi ha botons (no hi ha seccions).";
+  }
 }
 
-// --- Carrega dades (amb missatge d'error real) ---
+// Load data.json
 (function loadData(){
   const loading = document.getElementById("loading");
   const url = new URL("data.json", window.location.href);
