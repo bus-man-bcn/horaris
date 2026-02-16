@@ -16,13 +16,10 @@ function normBusLabel(bt) {
 }
 
 function tripHeader(tr, bt) {
-  // ordre demanat: Sortida… Arribada… Servei…
   return `Sortida ${tr.start_time}. Arribada ${tr.end_time}. Servei ${normBusLabel(bt)}.`;
 }
 
 function routeSentence(tr) {
-  // lectura seguida amb tots els temps i parades (una sola frase)
-  // separador discret (evitem ·)
   const parts = tr.stops.map(s => `${s.time} ${s.stop}`);
   return `Recorregut: ${parts.join("; ")}.`;
 }
@@ -38,13 +35,11 @@ function buildUI(data) {
     return;
   }
 
-  // neteja
   panels.innerHTML = "";
   pickerMB.innerHTML = "";
   pickerMO.innerHTML = "";
   if (loading) loading.textContent = "";
 
-  // crea panells + botons
   const panelByKey = new Map();
 
   function makePanel(section, day) {
@@ -53,8 +48,7 @@ function buildUI(data) {
 
     panel.appendChild(el("h3", { text: `${section.title} — ${day.name}` }));
 
-    // dos botons dins la secció: directes vs semidirectes
-    const btDirect = section.busTypeOrder?.[0] || "e22";
+    const btDirect = (section.busTypeOrder && section.busTypeOrder[0]) ? section.busTypeOrder[0] : "e22";
     const btSemi = "semidirecte";
 
     const btnRow = el("div", { class: "picker", role: "group", "aria-label": "Tria tipus de servei" });
@@ -73,26 +67,15 @@ function buildUI(data) {
 
     function renderBusType(bt) {
       box.innerHTML = "";
-
       const trips = (day.buses && day.buses[bt]) ? day.buses[bt] : [];
       if (!trips.length) {
         box.appendChild(el("p", { class: "muted", text: "No hi ha horaris en aquesta secció." }));
         return;
       }
-
       for (const tr of trips) {
         const wrap = el("div", { class: "trip" });
-
-        // capçalera (sense desplegable)
-        wrap.appendChild(el("p", { class: "route-sentence" }, [
-          document.createTextNode(tripHeader(tr, bt))
-        ]));
-
-        // una sola frase “Recorregut: ...” amb tota la llista completa
-        wrap.appendChild(el("p", { class: "route-sentence" }, [
-          document.createTextNode(routeSentence(tr))
-        ]));
-
+        wrap.appendChild(el("p", { class: "route-sentence", text: tripHeader(tr, bt) }));
+        wrap.appendChild(el("p", { class: "route-sentence", text: routeSentence(tr) }));
         box.appendChild(wrap);
       }
     }
@@ -105,52 +88,47 @@ function buildUI(data) {
     btnA.addEventListener("click", () => { setPressed(true); renderBusType(btDirect); });
     btnB.addEventListener("click", () => { setPressed(false); renderBusType(btSemi); });
 
-    // per defecte: directes
     renderBusType(btDirect);
 
     panelByKey.set(key, panel);
     panels.appendChild(panel);
-
-    return { key, panel };
+    return key;
   }
 
   function addPickerButton(targetPicker, label, key) {
     const b = el("button", { type: "button", "aria-pressed": "false" }, [document.createTextNode(label)]);
     b.addEventListener("click", () => {
-      // desactiva botons del mateix bloc
       for (const btn of targetPicker.querySelectorAll("button")) btn.setAttribute("aria-pressed", "false");
       b.setAttribute("aria-pressed", "true");
 
-      // amaga tots els panells
       for (const p of panels.querySelectorAll(".panel")) p.setAttribute("aria-hidden", "true");
-
-      // mostra el triat
       const panel = panelByKey.get(key);
       if (panel) panel.setAttribute("aria-hidden", "false");
 
-      // mou focus al títol de resultats (lectura més clara)
       const h = document.getElementById("h-result");
       if (h) h.scrollIntoView({ behavior: "smooth", block: "start" });
     });
     targetPicker.appendChild(b);
   }
 
-  // construeix tot
   for (const section of data.sections) {
     for (const day of section.days || []) {
-      const { key } = makePanel(section, day);
+      const key = makePanel(section, day);
 
-      // separa en 2 blocs tal com volies: MB i MO
       const isMB = (section.id === "m2b" || section.id === "b2m");
       const targetPicker = isMB ? pickerMB : pickerMO;
 
       addPickerButton(targetPicker, `${section.title} — ${day.name}`, key);
     }
   }
+
+  // default: first button of first picker
+  const firstBtn = pickerMB.querySelector("button") || pickerMO.querySelector("button");
+  if (firstBtn) firstBtn.click();
 }
 
-// --- Carrega dades ---
-(function loadData() {
+// --- Carrega dades (amb missatge d'error real) ---
+(function loadData(){
   const loading = document.getElementById("loading");
   const url = new URL("data.json", window.location.href);
 
@@ -159,7 +137,13 @@ function buildUI(data) {
       if (!r.ok) throw new Error(`HTTP ${r.status} - No s'ha trobat data.json`);
       return r.json();
     })
-    .then(data => buildUI(data))
+    .then(data => {
+      try { buildUI(data); }
+      catch (e) {
+        console.error(e);
+        if (loading) loading.textContent = "Error mostrant horaris (JS). Mira la consola.";
+      }
+    })
     .catch(err => {
       console.error(err);
       if (loading) loading.textContent = "Error carregant dades: " + (err?.message || String(err));
