@@ -3452,10 +3452,41 @@
                 ]
               },
               {
-                "trip_id": 94,
-                "start_time": "22:15",
-                "end_time": "00:00",
+                "trip_id": 93,
+                "start_time": "22:45",
+                "end_time": "23:25",
                 "stops": [
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "22:45"
+                  },
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "22:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "23:21"
+                  },
+                  {
+                    "stop": "BCN - Palau Reial",
+                    "time": "23:23"
+                  },
+                  {
+                    "stop": "BCN - Maria Cristina",
+                    "time": "23:25"
+                  }
+                ]
+              },
+              {
+                "trip_id": 94,
+                "start_time": "00:00",
+                "end_time": "23:55",
+                "stops": [
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "00:00"
+                  },
                   {
                     "stop": "MANRESA - Estació d'autobusos",
                     "time": "22:15"
@@ -3507,37 +3538,6 @@
                   {
                     "stop": "BCN - Muntaner - Còrsega",
                     "time": "23:55"
-                  },
-                  {
-                    "stop": "BCN - Gran Via de les Corts, 612",
-                    "time": "00:00"
-                  }
-                ]
-              },
-              {
-                "trip_id": 93,
-                "start_time": "22:45",
-                "end_time": "23:25",
-                "stops": [
-                  {
-                    "stop": "OLESA - Rotonda Els Closos",
-                    "time": "22:45"
-                  },
-                  {
-                    "stop": "OLESA - Pl. Catalunya",
-                    "time": "22:47"
-                  },
-                  {
-                    "stop": "BCN - Zona Universitària",
-                    "time": "23:21"
-                  },
-                  {
-                    "stop": "BCN - Palau Reial",
-                    "time": "23:23"
-                  },
-                  {
-                    "stop": "BCN - Maria Cristina",
-                    "time": "23:25"
                   }
                 ]
               }
@@ -3671,69 +3671,6 @@
             ],
             "e23": [],
             "semidirecte": [
-              {
-                "trip_id": 1,
-                "start_time": "00:07",
-                "end_time": "00:00",
-                "stops": [
-                  {
-                    "stop": "MANRESA - Plaça Valldaura",
-                    "time": "00:07"
-                  },
-                  {
-                    "stop": "CASTELLGALÍ - La Fàbrica",
-                    "time": "00:18"
-                  },
-                  {
-                    "stop": "ST. V. CASTELLET - Plaça del Pi",
-                    "time": "00:22"
-                  },
-                  {
-                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
-                    "time": "00:33"
-                  },
-                  {
-                    "stop": "MONISTROL - Can Gomis",
-                    "time": "00:35"
-                  },
-                  {
-                    "stop": "OLESA - Rotonda Els Closos",
-                    "time": "00:45"
-                  },
-                  {
-                    "stop": "OLESA - Pl. Catalunya",
-                    "time": "00:47"
-                  },
-                  {
-                    "stop": "BCN - Zona Universitària",
-                    "time": "01:15"
-                  },
-                  {
-                    "stop": "BCN - Palau Reial",
-                    "time": "01:17"
-                  },
-                  {
-                    "stop": "BCN - Maria Cristina",
-                    "time": "01:19"
-                  },
-                  {
-                    "stop": "BCN - Pl. Francesc Macià",
-                    "time": "01:22"
-                  },
-                  {
-                    "stop": "BCN - Muntaner - Còrsega",
-                    "time": "01:25"
-                  },
-                  {
-                    "stop": "BCN - Gran Via de les Corts, 612",
-                    "time": "01:30"
-                  },
-                  {
-                    "stop": "MANRESA - Estació d'autobusos",
-                    "time": "00:00"
-                  }
-                ]
-              },
               {
                 "trip_id": 2,
                 "start_time": "02:00",
@@ -4534,21 +4471,16 @@
                     "time": "23:30"
                   }
                 ]
-              }
-            ]
-          }
-        },
-        {
-          "name": "Diumenges, excepte festiu",
-          "buses": {
-            "e22": [],
-            "e23": [],
-            "semidirecte": [
+              },
               {
-                "trip_id": 21,
-                "start_time": "00:07",
-                "end_time": "00:00",
+                "trip_id": 1,
+                "start_time": "00:00",
+                "end_time": "01:30",
                 "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "00:00"
+                  },
                   {
                     "stop": "MANRESA - Plaça Valldaura",
                     "time": "00:07"
@@ -4600,13 +4532,18 @@
                   {
                     "stop": "BCN - Gran Via de les Corts, 612",
                     "time": "01:30"
-                  },
-                  {
-                    "stop": "MANRESA - Estació d'autobusos",
-                    "time": "00:00"
                   }
                 ]
-              },
+              }
+            ]
+          }
+        },
+        {
+          "name": "Diumenges, excepte festiu",
+          "buses": {
+            "e22": [],
+            "e23": [],
+            "semidirecte": [
               {
                 "trip_id": 22,
                 "start_time": "02:00",
@@ -5564,6 +5501,69 @@
                   {
                     "stop": "BCN - Gran Via de les Corts, 612",
                     "time": "23:30"
+                  }
+                ]
+              },
+              {
+                "trip_id": 21,
+                "start_time": "00:00",
+                "end_time": "01:30",
+                "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "00:00"
+                  },
+                  {
+                    "stop": "MANRESA - Plaça Valldaura",
+                    "time": "00:07"
+                  },
+                  {
+                    "stop": "CASTELLGALÍ - La Fàbrica",
+                    "time": "00:18"
+                  },
+                  {
+                    "stop": "ST. V. CASTELLET - Plaça del Pi",
+                    "time": "00:22"
+                  },
+                  {
+                    "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
+                    "time": "00:33"
+                  },
+                  {
+                    "stop": "MONISTROL - Can Gomis",
+                    "time": "00:35"
+                  },
+                  {
+                    "stop": "OLESA - Rotonda Els Closos",
+                    "time": "00:45"
+                  },
+                  {
+                    "stop": "OLESA - Pl. Catalunya",
+                    "time": "00:47"
+                  },
+                  {
+                    "stop": "BCN - Zona Universitària",
+                    "time": "01:15"
+                  },
+                  {
+                    "stop": "BCN - Palau Reial",
+                    "time": "01:17"
+                  },
+                  {
+                    "stop": "BCN - Maria Cristina",
+                    "time": "01:19"
+                  },
+                  {
+                    "stop": "BCN - Pl. Francesc Macià",
+                    "time": "01:22"
+                  },
+                  {
+                    "stop": "BCN - Muntaner - Còrsega",
+                    "time": "01:25"
+                  },
+                  {
+                    "stop": "BCN - Gran Via de les Corts, 612",
+                    "time": "01:30"
                   }
                 ]
               }
@@ -9043,9 +9043,13 @@
               },
               {
                 "trip_id": 19,
-                "start_time": "22:40",
-                "end_time": "00:00",
+                "start_time": "00:00",
+                "end_time": "23:52",
                 "stops": [
+                  {
+                    "stop": "MANRESA - Estació d'autobusos",
+                    "time": "00:00"
+                  },
                   {
                     "stop": "BCN - Gran Via de les Corts, 612",
                     "time": "22:40"
@@ -9069,10 +9073,6 @@
                   {
                     "stop": "MANRESA - Plaça Valldaura",
                     "time": "23:52"
-                  },
-                  {
-                    "stop": "MANRESA - Estació d'autobusos",
-                    "time": "00:00"
                   }
                 ]
               }
@@ -12697,7 +12697,7 @@
               {
                 "trip_id": 94,
                 "start_time": "22:48",
-                "end_time": "00:00",
+                "end_time": "23:55",
                 "stops": [
                   {
                     "stop": "MONISTROL - Parc de l'Alvèrnia (La Puntual)",
@@ -12734,10 +12734,6 @@
                   {
                     "stop": "BCN - Muntaner - Còrsega",
                     "time": "23:55"
-                  },
-                  {
-                    "stop": "BCN - Gran Via de les Corts, 612",
-                    "time": "00:00"
                   }
                 ]
               }
