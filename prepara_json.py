@@ -23,7 +23,6 @@ import argparse
 import json
 import re
 from pathlib import Path
-from collections import defaultdict
 
 import pandas as pd
 
@@ -47,7 +46,7 @@ def norm_time(x) -> str:
         return s
     return f"{int(m.group(1)):02d}:{int(m.group(2)):02d}"
 
-def tmin(x) -> int | None:
+def tmin(x):
     m = re.match(r"^(\d{2}):(\d{2})$", str(x))
     if not m:
         return None
@@ -75,7 +74,7 @@ def has_prefix(stops: list[str], prefixes: list[str]) -> bool:
                 return True
     return False
 
-def idx_first(stops: list[str], prefixes: list[str]) -> int | None:
+def idx_first(stops: list[str], prefixes: list[str]):
     for i, s in enumerate(stops):
         up = str(s).upper()
         for p in prefixes:
@@ -83,7 +82,7 @@ def idx_first(stops: list[str], prefixes: list[str]) -> int | None:
                 return i
     return None
 
-def idx_last(stops: list[str], prefixes: list[str]) -> int | None:
+def idx_last(stops: list[str], prefixes: list[str]):
     for i in range(len(stops)-1, -1, -1):
         up = str(stops[i]).upper()
         for p in prefixes:
@@ -91,7 +90,7 @@ def idx_last(stops: list[str], prefixes: list[str]) -> int | None:
                 return i
     return None
 
-def classify_bus_type(stops: list[str], raw_type: str | None) -> str:
+def classify_bus_type(stops: list[str], raw_type):
     raw = (raw_type or "").strip().lower()
     bt = raw if raw in ("e22","e23") else "semidirecte"
     if bt == "e23":
