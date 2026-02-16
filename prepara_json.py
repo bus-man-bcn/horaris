@@ -1,237 +1,228 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-import argparse
-import json
-import re
+import pandas as pd
+import json, re
 from pathlib import Path
 
-import pandas as pd
+# -------- Config --------
+CSV_IN = Path("horaris.csv")
+OUT = Path("data.json")
 
 DAY_ORDER = [
-    "Dilluns a divendres feiners, excepte agost",
-    "Dissabtes i Festius",
-    "Diumenges, excepte festiu",
+  "Dilluns a divendres feiners, excepte agost",
+  "Dissabtes i Festius",
+  "Diumenges, excepte festiu",
 ]
 
 SECTIONS = [
-    ("m2b", "Manresa → Barcelona", ["e22", "semidirecte"]),
-    ("b2m", "Barcelona → Manresa", ["e22", "semidirecte"]),
-    ("o2b", "Olesa o Monistrol → Barcelona", ["e23", "semidirecte"]),
-    ("b2o", "Barcelona → Olesa o Monistrol", ["e23", "semidirecte"]),
+  ("m2b", "Manresa → Barcelona", ["e22","semidirecte"]),
+  ("b2m", "Barcelona → Manresa", ["e22","semidirecte"]),
+  ("o2b", "Olesa o Monistrol → Barcelona", ["e23","semidirecte"]),
+  ("b2o", "Barcelona → Olesa o Monistrol", ["e23","semidirecte"]),
 ]
 
+# -------- Helpers --------
+def norm_time(x):
+  s = str(x).strip().replace(".", ":")
+  m = re.match(r"^(\d{1,2}):(\d{2})$", s)
+  if not m: return s
+  return f"{int(m.group(1)):02d}:{int(m.group(2)):02d}"
 
-def norm_time(x) -> str:
-    s = str(x).strip().replace(".", ":")
-    m = re.match(r"^(\d{1,2}):(\d{2})$", s)
-    if not m:
-        return s
-    return f"{int(m.group(1)):02d}:{int(m.group(2)):02d}"
+def tmin(x):
+  m = re.match(r"^(\d{2}):(\d{2})$", str(x))
+  if not m: return None
+  return int(m.group(1))*60 + int(m.group(2))
+
+def has_prefix(stops, prefixes):
+  for st in stops:
+    up = st.upper()
+    for p in prefixes:
+      if up.startswith(p):
+        return True
+  return False
+
+def classify(stops, raw_type):
+  """
+  Regles:
+  - Si passa per Olesa o Monistrol -> e23
+  - Si passa per Manresa (i no passa per Olesa/Monistrol) -> e22
+  - Si no encaixa -> Semidirecte
+  - Si raw_type diu e23 però el recorregut NO passa per Olesa/Monistrol i sí per Manresa -> e22
+  """
+  has_olesa = has_prefix(stops, ["OLESA"])
+  has_mon   = has_prefix(stops, ["MONISTROL"])
+  has_man   = has_prefix(stops, ["MANRESA"])
+
+  if has_olesa or has_mon:
+    inferred = "e23"
+  elif has_man:
+    inferred = "e22"
+  else:
+    inferred = "semidirecte"
+
+  rt = (raw_type or "").strip().lower()
+  if rt == "e23" and has_man and not (has_olesa or has_mon):
+    inferred = "e22"
+
+  if inferred not in ("e22","e23"):
+    inferred = "semidirecte"
+  return inferred
+
+def guess_section(first_stop, stops):
+  first = first_stop.upper()
+  has_bcn = has_prefix(stops, ["BCN"])
+  has_man = has_prefix(stops, ["MANRESA"])
+  has_om  = has_prefix(stops, ["OLESA","MONISTROL"])
+
+  if first.startswith("MANRESA") and has_bcn: return "m2b"
+  if first.startswith("BCN") and has_man and not has_om: return "b2m"
+  if (first.startswith("OLESA") or first.startswith("MONISTROL")) and has_bcn: return "o2b"
+  if first.startswith("BCN") and has_om: return "b2o"
+  # Fallbacks
+  if first.startswith("BCN") and has_bcn and has_man: return "b2m"
+  if first.startswith("MANRESA") and has_bcn and has_om: return "m2b"
+  return None
+
+def normalize_day(x):
+  s = str(x).strip().lower()
+  # IMPORTANT: diumenge primer, perquè hi ha textos amb "festiu"
+  if "diumenge" in s:
+    return DAY_ORDER[2]
+  if "dilluns" in s or "feiner" in s:
+    return DAY_ORDER[0]
+  if "dissabte" in s or "festiu" in s:
+    return DAY_ORDER[1]
+  return str(x).strip()
+
+def build_stop_sequence(g):
+  """
+  Reconstrueix l'ordre de parades a partir de la matriu origen-destí.
+  Evita ordenar per hora (problemes a la nit/00:xx).
+  """
+  edges = {}  # ps -> (pa, dep, arr)
+  starts = set()
+  ends = set()
+
+  for _, r in g.iterrows():
+    ps = r.get("Parada_sortida")
+    pa = r.get("Parada_arribada")
+    ts = r.get("Hora_sortida")
+    ta = r.get("Hora_arribada")
+
+    if pd.isna(ps) or pd.isna(pa):
+      continue
+
+    ps = str(ps).strip()
+    pa = str(pa).strip()
+
+    dep = None if pd.isna(ts) or str(ts).strip() == "-" else norm_time(ts)
+    arr = None if pd.isna(ta) or str(ta).strip() == "-" else norm_time(ta)
+
+    # Guardem el primer edge per cada sortida (la ruta és lineal)
+    if ps not in edges:
+      edges[ps] = (pa, dep, arr)
+
+    starts.add(ps)
+    ends.add(pa)
+
+  # Troba inici: parada que surt però no és arribada
+  candidates = list(starts - ends)
+  start = candidates[0] if candidates else None
+  if not start and edges:
+    start = next(iter(edges.keys()))
+  if not start:
+    return []
+
+  seq = []
+  current = start
+
+  # Inicial: hora de sortida si existeix
+  pa, dep, arr = edges.get(current, (None, None, None))
+  seq.append({"stop": current, "time": dep or (arr or "")})
+
+  # Recórrer fins al final
+  guard = 0
+  while current in edges and guard < 200:
+    guard += 1
+    nxt, dep, arr = edges[current]
+
+    # Si tenim hora de sortida per la parada actual, la prioritzem
+    if dep:
+      seq[-1]["time"] = dep
+
+    # Afegeix següent parada amb hora d'arribada (o buit si falta)
+    seq.append({"stop": nxt, "time": arr or ""})
+    current = nxt
+
+  # Neteja: omple hores buides si hi ha alguna (últim recurs: manté "")
+  for s in seq:
+    s["time"] = norm_time(s["time"]) if s["time"] else s["time"]
+
+  # Si la seqüència no té hores vàlides, retorna buit
+  if not any(tmin(s["time"]) is not None for s in seq):
+    return []
+
+  # Start/end times: primer/últim temps "real"
+  times = [s["time"] for s in seq if tmin(s["time"]) is not None]
+  start_time = times[0]
+  end_time = times[-1]
+
+  return seq, start_time, end_time
+
+# -------- Main --------
+df = pd.read_csv(CSV_IN)
+
+group_cols = ["Tipus_dia","Direccio","Tipus_bus","Id_viatge_dia"]
+raw_trips = []
+
+for (day_raw, direction, bus_raw, trip_id), g in df.groupby(group_cols, dropna=False):
+  built = build_stop_sequence(g)
+  if not built:
+    continue
+  stop_list, start_time, end_time = built
+
+  all_stops = [x["stop"] for x in stop_list]
+  first_stop = all_stops[0]
+
+  bt = classify(all_stops, None if pd.isna(bus_raw) else str(bus_raw))
+  sec = guess_section(first_stop, all_stops)
+  if not sec:
+    continue
+
+  day = normalize_day(day_raw)
+
+  raw_trips.append({
+    "section": sec,
+    "day": day,
+    "busType": bt,
+    "trip_id": int(trip_id) if str(trip_id).isdigit() else str(trip_id),
+    "start_time": start_time,
+    "end_time": end_time,
+    "stops": stop_list
+  })
+
+# Estructura de sortida (sempre amb 3 dies)
+sections = {sid: {d: {"e22":[], "e23":[], "semidirecte":[]} for d in DAY_ORDER}
+            for sid,_,_ in SECTIONS}
+
+for tr in raw_trips:
+  sections[tr["section"]][tr["day"]][tr["busType"]].append(tr)
+
+for sid in sections:
+  for d in DAY_ORDER:
+    for bt in sections[sid][d]:
+      sections[sid][d][bt].sort(key=lambda x: (tmin(x["start_time"]) or 10**9, str(x["trip_id"])))
 
 
-def tmin(x) -> int | None:
-    m = re.match(r"^(\d{2}):(\d{2})$", str(x))
-    if not m:
-        return None
-    return int(m.group(1)) * 60 + int(m.group(2))
-
-
-def has_any_stop(stops: list[str], prefixes: list[str]) -> bool:
-    for st in stops:
-        up = str(st).upper()
-        for p in prefixes:
-            if up.startswith(p):
-                return True
-    return False
-
-
-def idx_first(stops: list[str], prefixes: list[str]) -> int | None:
-    for i, s in enumerate(stops):
-        up = str(s).upper()
-        for p in prefixes:
-            if up.startswith(p):
-                return i
-    return None
-
-
-def idx_last(stops: list[str], prefixes: list[str]) -> int | None:
-    for i in range(len(stops) - 1, -1, -1):
-        up = str(stops[i]).upper()
-        for p in prefixes:
-            if up.startswith(p):
-                return i
-    return None
-
-
-def day_bucket(raw_day: str) -> str:
-    # Aquí ja et ve normalitzat al CSV, però ho deixem robust
-    s = str(raw_day).strip()
-    for d in DAY_ORDER:
-        if s.lower() == d.lower():
-            return d
-    low = s.lower()
-    if "dilluns" in low or "feiner" in low:
-        return DAY_ORDER[0]
-    if "dissabte" in low or "festiu" in low:
-        return DAY_ORDER[1]
-    if "diumenge" in low:
-        return DAY_ORDER[2]
-    return s
-
-
-def classify_bus_type(stops: list[str], raw_type: str | None) -> str:
-    """
-    - Respecta Tipus_bus si és e22/e23
-    - Altrament -> semidirecte
-    Fix Punt 2:
-    - e23 + passa per Manresa però NO passa per Olesa/Monistrol -> e22
-    """
-    raw = (raw_type or "").strip().lower()
-    bt = raw if raw in ("e22", "e23") else "semidirecte"
-
-    if bt == "e23":
-        has_om = has_any_stop(stops, ["OLESA", "MONISTROL"])
-        has_man = has_any_stop(stops, ["MANRESA"])
-        if has_man and not has_om:
-            bt = "e22"
-
-    return bt
-
-
-def slice_trip(stops_times: list[dict], start_i: int, end_i: int) -> dict:
-    sub = stops_times[start_i : end_i + 1]
-    return {
-        "start_time": sub[0]["time"],
-        "end_time": sub[-1]["time"],
-        "stops": sub,
+OUT_DATA = {
+  "sections": [
+    {
+      "id": sid,
+      "title": title,
+      "busTypeOrder": order,
+      "days": [{"name": d, "buses": sections[sid][d]} for d in DAY_ORDER],
     }
+    for sid, title, order in SECTIONS
+  ]
+}
 
-
-def main():
-    ap = argparse.ArgumentParser(description="Genera data.json a partir de horaris_manresa_barcelona_fullmatrix_tipusbus.csv")
-    ap.add_argument("-i", "--input", default="horaris_manresa_barcelona_fullmatrix_tipusbus.csv", help="CSV d'entrada")
-    ap.add_argument("-o", "--output", default="data.json", help="JSON de sortida")
-    args = ap.parse_args()
-
-    csv_in = Path(args.input)
-    out = Path(args.output)
-
-    if not csv_in.exists():
-        raise SystemExit(f"ERROR: No existeix {csv_in.resolve()}")
-
-    df = pd.read_csv(csv_in)
-
-    required = [
-        "Tipus_bus",
-        "Tipus_dia",
-        "Direccio",
-        "Parada_sortida",
-        "Hora_sortida",
-        "Parada_arribada",
-        "Hora_arribada",
-        "Id_viatge_dia",
-    ]
-    missing = [c for c in required if c not in df.columns]
-    if missing:
-        raise SystemExit(f"ERROR: Falta(n) columna(es): {missing}")
-
-    group_cols = ["Tipus_dia", "Direccio", "Tipus_bus", "Id_viatge_dia"]
-
-    # Contenidors finals
-    containers = {
-        sid: {d: {"e22": [], "e23": [], "semidirecte": []} for d in DAY_ORDER}
-        for sid, _, _ in SECTIONS
-    }
-
-    def add(sec_id: str, day: str, bt: str, trip_id_out, sub: dict):
-        containers[sec_id][day][bt].append(
-            {
-                "trip_id": trip_id_out,
-                "start_time": sub["start_time"],
-                "end_time": sub["end_time"],
-                "stops": sub["stops"],
-            }
-        )
-
-    # 1) Construïm viatges ordenats per hora
-    for (day_raw, direction, bus_raw, trip_id), g in df.groupby(group_cols, dropna=False):
-        day = day_bucket(str(day_raw))
-        if day not in containers["m2b"]:
-            continue
-
-        # map parada->hora (prou per aquesta matriu)
-        stops = {}
-        for _, r in g.iterrows():
-            ps, ts = r["Parada_sortida"], r["Hora_sortida"]
-            if pd.notna(ps) and pd.notna(ts) and str(ts).strip() != "-":
-                stops[str(ps)] = norm_time(ts)
-
-            pa, ta = r["Parada_arribada"], r["Hora_arribada"]
-            if pd.notna(pa) and pd.notna(ta) and str(ta).strip() != "-":
-                stops.setdefault(str(pa), norm_time(ta))
-
-        items = [(s, t) for s, t in stops.items() if tmin(norm_time(t)) is not None]
-        if not items:
-            continue
-
-        items.sort(key=lambda x: tmin(norm_time(x[1])) or 10**9)
-        stop_list = [{"stop": s, "time": norm_time(t)} for s, t in items]
-        stop_names = [x["stop"] for x in stop_list]
-
-        raw_type = None if pd.isna(bus_raw) else str(bus_raw)
-        bt = classify_bus_type(stop_names, raw_type)
-
-        trip_id_out = int(trip_id) if str(trip_id).isdigit() else str(trip_id)
-
-        # 2) Assignació a seccions + duplicació (retallant)
-        if direction == "Manresa - Barcelona":
-            # Manresa → Barcelona (complet)
-            bt_m2b = bt if bt in ("e22", "semidirecte") else "semidirecte"
-            add("m2b", day, bt_m2b, trip_id_out, slice_trip(stop_list, 0, len(stop_list) - 1))
-
-            # Olesa/Monistrol → Barcelona (retall) si el recorregut ho permet
-            if has_any_stop(stop_names, ["OLESA", "MONISTROL"]) and has_any_stop(stop_names, ["BCN"]):
-                si = idx_first(stop_names, ["OLESA", "MONISTROL"])
-                ei = idx_last(stop_names, ["BCN"])
-                if si is not None and ei is not None and si < ei:
-                    bt_o2b = bt if bt in ("e23", "semidirecte") else "semidirecte"
-                    add("o2b", day, bt_o2b, trip_id_out, slice_trip(stop_list, si, ei))
-
-        elif direction == "Barcelona - Manresa":
-            # Barcelona → Manresa (complet)
-            bt_b2m = bt if bt in ("e22", "semidirecte") else "semidirecte"
-            add("b2m", day, bt_b2m, trip_id_out, slice_trip(stop_list, 0, len(stop_list) - 1))
-
-            # Barcelona → Olesa/Monistrol (retall) si el recorregut ho permet
-            if has_any_stop(stop_names, ["BCN"]) and has_any_stop(stop_names, ["OLESA", "MONISTROL"]):
-                si = idx_first(stop_names, ["BCN"])
-                ei = idx_last(stop_names, ["OLESA", "MONISTROL"])
-                if si is not None and ei is not None and si < ei:
-                    bt_b2o = bt if bt in ("e23", "semidirecte") else "semidirecte"
-                    add("b2o", day, bt_b2o, trip_id_out, slice_trip(stop_list, si, ei))
-
-    # 3) Ordenar per hora de sortida
-    for sid in containers:
-        for d in containers[sid]:
-            for bt in containers[sid][d]:
-                containers[sid][d][bt].sort(key=lambda x: (tmin(x["start_time"]) or 10**9, str(x["trip_id"])))
-
-    out_data = {
-        "sections": [
-            {
-                "id": sid,
-                "title": title,
-                "busTypeOrder": order,
-                "days": [{"name": d, "buses": containers[sid][d]} for d in DAY_ORDER],
-            }
-            for sid, title, order in SECTIONS
-        ]
-    }
-
-    out.write_text(json.dumps(out_data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"OK -> {out.resolve()}")
-
-
-if __name__ == "__main__":
-    main()
+OUT.write_text(json.dumps(OUT_DATA, ensure_ascii=False, indent=2), encoding="utf-8")
+print("OK ->", OUT)
