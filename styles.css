@@ -1,3 +1,4 @@
+/* Accessible, high-contrast, touch-friendly */
 :root{
   --bg:#ffffff;
   --fg:#111111;
@@ -43,6 +44,7 @@ body{
 
 .content{ padding:16px; max-width:1000px; margin:0 auto; }
 .loading{ color:var(--muted); padding:8px 0; }
+.muted{ color:var(--muted); max-width:90ch; }
 
 .picker-title{ margin:14px 0 8px; font-size:1.1rem; }
 
@@ -80,6 +82,7 @@ body{
   background:var(--card);
 }
 .panel[aria-hidden="false"]{ display:block; }
+
 .panel h3{ margin:0 0 10px; font-size:1.2rem; }
 
 .segment-tabs{
@@ -107,13 +110,24 @@ body{
   border:1px solid var(--border);
   border-radius:14px;
   background:var(--bg);
-  padding:12px;
+  overflow:hidden;
 }
 
-.trip p{ margin:0 0 8px; }
-.trip p:last-child{ margin-bottom:0; }
+.trip-toggle{
+  width:100%;
+  border:0;
+  background:transparent;
+  padding:12px 12px;
+  text-align:left;
+  font-weight:650;
+  cursor:pointer;
+}
+.trip-toggle:focus{ outline:3px solid var(--focus); outline-offset:2px; }
 
-.muted{ color:var(--muted); }
+.trip-content{
+  border-top:1px solid var(--border);
+  padding:10px 12px 12px;
+}
 
 .site-footer{
   padding:14px 16px;

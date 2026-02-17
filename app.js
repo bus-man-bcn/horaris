@@ -15,15 +15,19 @@ function normBusLabel(bt){
   return "Semidirecte";
 }
 
+// ordre demanat
 function tripHeader(tr, bt){
-  // ordre demanat
   return `Sortida ${tr.start_time}. Arribada ${tr.end_time}. Servei ${normBusLabel(bt)}.`;
 }
 
+// lectura seguida (una sola frase)
 function routeSentence(tr){
-  // lectura seguida (una sola frase)
   const parts = tr.stops.map(s => `${s.time} ${s.stop}`);
   return `Recorregut: ${parts.join("; ")}.`;
+}
+
+function safeId(s){
+  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
 }
 
 function selectPanel(panelByKey, panelsRoot, targetPicker, key, pressedButton, doScroll){
@@ -63,7 +67,7 @@ function buildUI(data){
 
   function makePanel(section, day){
     const key = `${section.id}__${day.name}`;
-    const panel = el("div", {class:"panel", id:`panel-${key}`, "aria-hidden":"true"});
+    const panel = el("div", {class:"panel", id:`panel-${safeId(key)}`, "aria-hidden":"true"});
 
     panel.appendChild(el("h3", {text: `${section.title} — ${day.name}`}));
 
@@ -93,12 +97,26 @@ function buildUI(data){
         return;
       }
 
-      for (const tr of trips){
-        const card = el("div", {class:"trip"});
-        card.appendChild(el("p", {text: tripHeader(tr, bt)}));
-        card.appendChild(el("p", {text: routeSentence(tr)}));
-        listBox.appendChild(card);
-      }
+      trips.forEach((tr, i) => {
+        const tripWrap = el("div", {class:"trip"});
+
+        const tripId = `trip_${safeId(section.id)}_${safeId(day.name)}_${safeId(bt)}_${i}`;
+
+        const btn = el("button", {
+          class: "trip-toggle",
+          type: "button",
+          "aria-expanded": "false",
+          "aria-controls": tripId,
+          text: tripHeader(tr, bt)
+        });
+
+        const panel = el("div", {id: tripId, class: "trip-content", hidden: ""});
+        panel.appendChild(el("p", {text: routeSentence(tr)}));
+
+        tripWrap.appendChild(btn);
+        tripWrap.appendChild(panel);
+        listBox.appendChild(tripWrap);
+      });
     }
 
     function setPressed(aPressed){
@@ -109,7 +127,7 @@ function buildUI(data){
     btnA.addEventListener("click", () => { setPressed(true); render(btDirect); });
     btnB.addEventListener("click", () => { setPressed(false); render(btSemi); });
 
-    // per defecte: directes, sense focus/scroll
+    // per defecte: directes
     render(btDirect);
 
     panelByKey.set(key, panel);
@@ -119,7 +137,7 @@ function buildUI(data){
 
   function addPickerButton(targetPicker, label, key){
     const b = el("button", {type:"button", "aria-pressed":"false", "data-key": key}, [
-      // sense "·" (TalkBack diu “punto volado”), fem servir “—”
+      // Evitem el símbol "·" (TalkBack diu “punto volado”): fem servir “—”
       document.createTextNode(label)
     ]);
     b.addEventListener("click", () => selectPanel(panelByKey, panels, targetPicker, key, b, true));
@@ -150,11 +168,25 @@ function buildUI(data){
   }
 }
 
+// --- Toggle accessible: botó + aria-expanded + div hidden ---
+document.addEventListener("click", function(e) {
+  const btn = e.target.closest?.(".trip-toggle");
+  if (!btn) return;
+
+  const id = btn.getAttribute("aria-controls");
+  const panel = document.getElementById(id);
+  if (!panel) return;
+
+  const expanded = btn.getAttribute("aria-expanded") === "true";
+  btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+  panel.hidden = expanded;
+});
+
 // Carrega data.json (cache-busting suau)
 (function loadData(){
   const loading = document.getElementById("loading");
   const url = new URL("data.json", window.location.href);
-  url.searchParams.set("v", "8");
+  url.searchParams.set("v", "9");
 
   fetch(url.toString(), {cache:"no-store"})
     .then(r => {
